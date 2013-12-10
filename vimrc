@@ -37,8 +37,6 @@ map Xw :wa<cr>
 map XX :qa<cr>
 map XQ :qa!<cr>
 map <c-j> <c-e>
-map <c-n> :n<CR>
-map <c-m> :wn<CR>
 map <c-k> <c-y>
 map \ :noh<cr>
 

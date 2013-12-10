@@ -1,8 +1,10 @@
 [user]
-	name = Benjamin Kalman
-	email = kalman@chromium.org
+	name = Christopher Lam
+	email = calamity@chromium.org
 [color]
 	ui = true
 [core]
 	autocrlf = false
 	filemode = false
+[branch]
+  autosetupmerge = always

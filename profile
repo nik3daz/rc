@@ -88,6 +88,8 @@ glf()  { git ls-files "$@"; }
 gmb()  { git merge-base "$@"; }
 gg()   { git grep "$@"; }
 gcp()  { git cherry-pick "$@"; }
+gdu()  { git diff '@{u}'; }
+git-archive() { git tag "archive/$1" "$1" && git branch -D "$1"; }
 
 complete -o default -o nospace -F _git_branch gb
 complete -o default -o nospace -F _git_branch ghide
