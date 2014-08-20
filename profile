@@ -1,5 +1,9 @@
 #!/bin/bash
 
+export GYP_GENERATORS='ninja'
+export GYP_DEFINES='component=shared_library clang=0 win_use_external_manifest=1'
+export GYP_PARALLEL=1
+
 #
 # Undo stuff before sourcing anything
 #
@@ -19,15 +23,13 @@ case `uname` in
   Linux)  source $HOME/.rc/profile_Linux ;;
 esac
 
+alias vi='vim'
 #
 # Paths etc
 #
 
 # Mac gets crappy hostname sometimes.
-__hostname() {
-  hostname -s | sed -E 's/dhcp-(.*)$/mac/'
-}
-export PS1='\[\033[01;32m\]# $(__hostname)\[\033[01;34m\] \w \[\033[31m\]$(__git_ps1 "(%s)")\n\[\033[01;32m\]> \[\033[00m\]'
+export PS1='\[\033[01;32m\]# $(hostname)\[\033[01;34m\] \w \[\033[31m\]$(__git_ps1 "(%s)")\n\[\033[01;32m\]> \[\033[00m\]'
 
 export GOROOT="$HOME/local/go"
 export EDITOR="vim"
@@ -35,7 +37,7 @@ export SVN_LOG_EDITOR="$EDITOR"
 
 export PATH="$HOME/local/bin:$PATH"
 export PATH="$HOME/local/rc_scripts:$PATH"
-export PATH="$HOME/local/depot_tools:$PATH"
+export PATH="$HOME/depot_tools:$PATH"
 export PATH="$GOROOT/bin:$PATH"
 
 #
@@ -53,7 +55,6 @@ wg()      { wget --no-check-certificate -O- "$@"; }
 grr()     { grep -rn --color --exclude='.svn' "$@"; }
 s()       { screen -DR "$@"; }
 prepend() { sed "s|^|$1" "$@"; }
-sx()      { ssh -Y "$@"; }
 
 vl() {
   file=`echo "$1" | cut -d: -f1`
@@ -76,6 +77,7 @@ gc()   { git commit "$@"; }
 gst()  { git status "$@"; }
 gl()   { git log "$@"; }
 gr()   { git rebase "$@"; }
+gup()  { git branch --set-upstream "$@"; }
 gp()   { git pull "$@"; }
 gls()  { git ls-files "$@"; }
 gm()   { git merge "$@"; }
@@ -88,10 +90,31 @@ glf()  { git ls-files "$@"; }
 gmb()  { git merge-base "$@"; }
 gg()   { git grep "$@"; }
 gcp()  { git cherry-pick "$@"; }
+oops() { git commit -a --amend "$@"; }
 gdu()  { git diff '@{u}'; }
-git-archive() { git tag "archive/$1" "$1" && git branch -D "$1"; }
+gdgmb() {
+  x=$1;
+  y=$2
+  if [ -z $x ]; then
+    x=HEAD;
+  fi;
+  if [-z $y]; then
+    y=master;
+  fi
+  git diff `git merge-base $y $x` $x;
+}
+
+gclup() { gdu | grep '^+.*LOG' || git cl upload "$@"; }
+git-archive() {
+  x=$2;
+  if [ -z $x ]; then
+    x=$1;
+  fi;
+  git tag "archive/$x" "$1" && git branch -D "$1";
+}
 
 complete -o default -o nospace -F _git_branch gb
+complete -o default -o nospace -F _git_branch git-archive
 complete -o default -o nospace -F _git_branch ghide
 complete -o default -o nospace -F _git_checkout gch
 complete -o default -o nospace -F _git_checkout gchr
@@ -100,8 +123,10 @@ complete -o default -o nospace -F _git_diff gd
 complete -o default -o nospace -F _git_diff gdns
 complete -o default -o nospace -F _git_diff gds
 complete -o default -o nospace -F _git_merge_base gmb
+complete -o default -o nospace -F _git_merge_base gdgmb
 complete -o default -o nospace -F _git_log gl
 complete -o default -o nospace -F _git_rebase gr
+complete -o default -o nospace -F _git_rebase grm
 
 unmerged() {
   git status -s | grep '^[AUD][AUD] ' | cut -f2 -d' '
@@ -224,9 +249,28 @@ gsquash() {
   gC
 }
 
-export CRDIR="$HOME/chromium"
-cdc() {
-  c "${CRDIR}${1}"
+lkgr() {
+  curl http://chromium-status.appspot.com/lkgr
+}
+
+car() {
+  local OPTIND
+  builddir="out/Debug"
+  norun=0
+  while getopts "d:n" o; do
+    case "$o" in
+      d) builddir=$"$OPTARG";;
+      n) norun=1;;
+      ?) echo >&2 "Usage: car [-d dir] [-n] target [opts]"; return 1;;
+    esac
+  done
+  shift $((OPTIND - 1))
+  target="$1"
+  shift
+  ninja -C $builddir
+  if [ $? -eq 0 ] && [ $norun -eq 0 ]; then
+    $builddir/$target $@
+  fi
 }
 
 crbr() {
@@ -283,7 +327,7 @@ greplace() {
 
   for f in `gg -l "$@" "$from"`; do
     echo "Replacing in $f"
-    sedi "s:$from:$to:g" "$f"
+    sed -i $SED_I_SUFFIX "s:$from:$to:g" "$f"
   done
 }
 
@@ -294,3 +338,4 @@ crsync() {
 gclu() {
   g cl upload `gbase` "$@"
 }
+umask 022
