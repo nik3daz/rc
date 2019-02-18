@@ -1,0 +1,69 @@
+#!/bin/bash
+
+getchar() {
+ stty raw -echo;
+ dd if=/dev/tty count=1 bs=1 2>/dev/null
+}
+
+prev_year() {
+  year=$[$year - 1]
+}
+
+next_year() {
+  year=$[$year + 1]
+}
+
+prev_month() {
+  month=$[$month - 1]
+  if [ "$month" = "0" ]
+  then
+    month=12
+    prev_year
+  fi
+}
+
+next_month() {
+  month=$[$month + 1]
+  if [ "$month" = "13" ]
+  then
+    month=1
+    next_year
+  fi
+}
+
+do_exit() {
+  stty sane
+  exit
+}
+
+month=$(date +%m)
+month=${month#0}
+year=$(date +%Y)
+current_year=$year
+current_month=$month
+
+cal
+
+while true
+do
+
+[ "$(getchar)" = "" ] || do_exit
+[ "$(getchar)" = "[" ] || do_exit
+case $(getchar) in
+  D) #left
+     prev_month;;
+  C) #right
+     next_month;;
+  A) #up
+     prev_year;;
+  B) #down
+     next_year;;
+esac
+stty sane
+if [ "$month" = "$current_month" ] && [ "$year" = "$current_year" ]
+then
+ cal
+else
+ cal $month $year
+fi
+done

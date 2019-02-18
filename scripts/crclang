@@ -1,6 +1,0 @@
-#!/bin/bash
-
-source "$HOME/.rc/scripts/crbuild"
-
-export GYP_DEFINES="clang=1 remove_webcore_debug_symbols=1 clang_use_chrome_plugins=1 fastbuild=1 component=shared_library safe_browsing=1"
-do_build "$@"

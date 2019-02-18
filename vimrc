@@ -1,81 +1,76 @@
-syntax enable
-filetype indent on
-filetype plugin on
-colorscheme ben
+set nocompatible
 
-set autoindent
-set cursorline
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+Plugin 'chriskempson/base16-vim'
+Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'airblade/vim-gitgutter'
+
+call vundle#end()            " required
+
+source /usr/share/vim/google/google.vim
+
+syntax on
+
+set ai
+set si
+
+set hid
+
 set hlsearch
-set modeline
-set number
-set ruler
-set tags=tags
-set smarttab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set incsearch
+
+set noerrorbells
 set expandtab
-set backspace=indent,eol,start
-set nocindent
-set autoindent
-set wildmode=longest,list,full
+set smarttab
+set shiftwidth=2
+set tabstop=2
+
+" Sroll offset, causes file lines to be visible around current line while scrolling.
+set so=5
+
+" Because I'm not a masochist.
+set mouse=a
+set nu
+
 set wildmenu
+set wildmode=longest:full,full
+set ruler
 
-"map j gj
-"map k gk
-"map ^ g^
-"map $ g$
+" Map 0 to first non-blank character
+map 0 ^
+noremap <S-K> :ClangFormat<CR>
+
 map gr gT
-map m :cnext<CR>
-map e :e 
-map t :tabe 
-map gF :tabe <cfile><CR>
-map q Gyy<c-o>p
-map Q Gyy<c-o>P
-map & *<c-o>
-map Xw :wa<cr>
-map XX :qa<cr>
-map XQ :qa!<cr>
-map <c-j> <c-e>
-map <c-k> <c-y>
-map \ :noh<cr>
+nmap <silent> <PageDown> :set scroll=0<CR>:set scroll^=2<CR>:set scroll-=1<CR><C-D>:set scroll=0<CR>
+nmap <silent> <PageUp> :set scroll=0<CR>:set scroll^=2<CR>:set scroll-=1<CR><C-U>:set scroll=0<CR>
+map <S-Up> <Up>
+map <S-Down> <Down>
 
-" Taken from :help [I
-map <F5> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
+" Highlight tabs and trailing spaces
+autocmd BufNewFile,BufRead * set list listchars=tab:>.,trail:-
+" Highlight lines that are too long
+autocmd BufNewFile,BufRead * match Error /\%>80v.\+/
 
-"
-" For switching between .cc and .h files.
-" Taken from koz.
-"
-fu! SetSuffix(fn, suffix)
-    return substitute(a:fn, "\\.[^.]*$", "." . a:suffix, "")
-endfunction
+map <C-p> :FufBuffer<CR>
 
-fu! GetOther(fn)
-    if a:fn =~ "\\.h$"
-        " Attempt to open any WebKit cpp file.
-        let s:cpp = SetSuffix(a:fn, "cpp")
-        if filereadable(s:cpp)
-            return s:cpp
-        endif
-        " Attempt to open an ObjC file.
-        let s:mm = SetSuffix(a:fn, "mm")
-        if filereadable(s:mm)
-            return s:mm
-        endif
-        " Default to opening a (possibly new) .cc file.
-        return SetSuffix(a:fn, "cc")
-    elseif a:fn =~ "\\.cc$" || a:fn =~ "\\.cpp" || a:fn =~ "\\.mm"
-        return SetSuffix(a:fn, "h")
-    endif
-    return 1
-endfunction
+let g:ycm_global_ycm_extra_conf = '~/Projects/chromium/src/tools/vim/chromium.ycm_extra_conf.py'
 
-fu! Switch()
-    let s:temp = GetOther(expand("%"))
-    if s:temp != 1
-        exe ":e " . s:temp
-    endif
-endfunction
+set t_Co=256
+set background=dark
+set termguicolors
+colorscheme jellybeans
+" colorscheme base16-solarized
 
-map _ :call Switch()<CR>
+filetype plugin indent on    " required

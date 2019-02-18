@@ -1,0 +1,5 @@
+keycode 66 = Control_L
+clear Lock
+add Control = Control_L
+!keycode 78 = Caps_Lock
+keycode 118 = Control_L

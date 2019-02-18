@@ -1,8 +1,8 @@
 RC := $(HOME)/.rc
 
-.PHONY: all profile vim gdbinit gitconfig rc_scripts
+.PHONY: all profile vim gdbinit gitconfig zsh xmonad xmodmap
 
-all: profile vim gdbinit gitconfig rc_scripts
+all: profile vim gdbinit gitconfig zsh xmonad xmodmap
 
 profile:
 	rm -f $(HOME)/.profile
@@ -22,7 +22,16 @@ gitconfig:
 	rm -f $(HOME)/.gitconfig
 	ln -s $(RC)/gitconfig $(HOME)/.gitconfig
 
-rc_scripts:
-	mkdir -p $(HOME)/local
-	rm -f $(HOME)/local/rc_scripts
-	ln -s $(RC)/scripts $(HOME)/local/rc_scripts
+zsh:
+	rm -f $(HOME)/.zshrc
+	ln -s $(RC)/zshrc $(HOME)/.zshrc
+	rm -rf $(HOME)/.oh-my-zsh
+	ln -s $(RC)/zshrc $(HOME)/.oh-my-zsh
+
+xmonad:
+	cd $(RC)/ez-xmonad
+	./install.sh
+
+xmodmap:
+	rm -f $(HOME)/.xmodmap
+	ln -s $(RC)/xmodmap $(HOME)/.xmodmap
