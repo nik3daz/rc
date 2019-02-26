@@ -34,10 +34,10 @@ import qualified Data.Set as S
 import Data.Map ((!))
 
 defaultPadding = 4 :: Int
-barX = 2560 :: Int
+barX = 0 :: Int
 barY = 0
 barHeight = 24 :: Int
-barWidth = 2560 :: Int
+barWidth = 5120 :: Int
 backgroundColor = 0x2F1B40
 backgroundColorString = "#2F1B40"
 foregroundColorString = "#000000"
