@@ -26,7 +26,7 @@ zsh:
 	rm -f $(HOME)/.zshrc
 	ln -s $(RC)/zshrc $(HOME)/.zshrc
 	rm -rf $(HOME)/.oh-my-zsh
-	ln -s $(RC)/zshrc $(HOME)/.oh-my-zsh
+	ln -s $(RC)/oh-my-zsh $(HOME)/.oh-my-zsh
 
 xmonad:
 	cd $(RC)/ez-xmonad
