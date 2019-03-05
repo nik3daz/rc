@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/usr/local/google/home/calamity/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -53,7 +53,7 @@ plugins=(gitfast zsh-syntax-highlighting)
 
 # User configuration
 
-export PATH="/usr/local/google/home/calamity/local/go/bin:/usr/local/google/home/calamity/local/depot_tools:/usr/local/google/home/calamity/depot_tools:/usr/local/google/home/calamity/local/rc_scripts:/usr/local/google/home/calamity/local/bin:/usr/local/google/home/calamity/local/go/bin:/usr/local/google/home/calamity/local/depot_tools:/usr/local/google/home/calamity/depot_tools:/usr/local/google/home/calamity/local/rc_scripts:/usr/local/google/home/calamity/local/bin:/usr/lib/google-golang/bin:/usr/local/buildtools/java/jdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/google/home/calamity/local/src/third_party/android_tools/sdk/platform-tools:/usr/local/google/home/calamity/node_modules/bin"
+export PATH="$HOME/local/go/bin:$HOME/local/depot_tools:$HOME/depot_tools:$HOME/local/rc_scripts:$HOME/local/bin:$HOME/local/go/bin:$HOME/local/depot_tools:$HOME/depot_tools:$HOME/local/rc_scripts:$HOME/local/bin:/usr/lib/google-golang/bin:/usr/local/buildtools/java/jdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/local/src/third_party/android_tools/sdk/platform-tools:$HOME/node_modules/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -70,7 +70,7 @@ alias gch='git checkout'
 alias gls='git ls-files'
 alias oops='git commit -a --amend'
 
-export NVM_DIR="/usr/local/google/home/calamity/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 loadreview() {
@@ -209,7 +209,7 @@ upload() {
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored
-zstyle :compinstall filename '/usr/local/google/home/calamity/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
 compinit

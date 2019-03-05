@@ -10,7 +10,7 @@ volumeicon &
 if [ "z$DISPLAY" = "z:0" ]; then
   xscreensaver &
 else
-  . /usr/local/google/home/calamity/.profile
+  . $HOME/.profile
 fi
 
 xmodmap $HOME/.xmodmap &

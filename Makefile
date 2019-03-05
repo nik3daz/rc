@@ -31,6 +31,8 @@ zsh:
 xmonad:
 	cd $(RC)/ez-xmonad
 	./install.sh
+	ln -s $(RC)/xmonad $(HOME)/.xmonad
+	ln -s $(RC)/xsession $(HOME)/.xsession
 
 xmodmap:
 	rm -f $(HOME)/.xmodmap

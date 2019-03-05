@@ -13,9 +13,3 @@ dump_xsettings || true;
 
 # To change toolbar monitor, change monitor 1 to 0 and barX to 0 in bar.hs.
 
-cpbak $DIR/xmonad $HOME/.xmonad
-cd $HOME/.xmonad/bar
-make
-cd -
-cpbak $DIR/xsession $HOME/.xsession
-
