@@ -116,20 +116,6 @@ git push --force-with-lease origin "${b:=$1}"
 }
 compdef _git ggf=git-checkout
 
-gchp() {
-  for b in "$@"; do
-    git checkout "$b" && git pull 1>/dev/null;
-    if [ $? -ne 0 ]; then
-      echo $b;
-      return 1;
-    fi
-  done
-}
-
-alias __git-checkout_main=_git_checkout
-compdef _git gchp=git_checkout
-
-
 ggl() {
   if [[ "$#" != 0 ]] && [[ "$#" != 1 ]]; then
     git pull origin "${*}"

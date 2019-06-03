@@ -2,7 +2,6 @@
 
 xsettingsd &
 xcompmgr &
-xscreensaver &
 
 volumeicon &
 /usr/share/goobuntu-indicator/goobuntu_indicator.py &

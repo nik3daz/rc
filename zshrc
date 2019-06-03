@@ -129,7 +129,29 @@ gdgmb() {
   git diff `git merge-base $y $x` $x;
 }
 
+gchp() {
+  for b in "$@"; do
+    git checkout "$b" && git pull 1>/dev/null;
+    if [ $? -ne 0 ]; then
+      echo $b;
+      return 1;
+    fi
+  done
+}
+
+alias __git-checkout_main=_git_checkout
+compdef _git gchp=git_checkout
+
+gchpall() {
+  gchp `gm --no-color | grep '  '`
+}
+
 ginsertnode() {
+  if [ -z "$1" ]; then
+    echo "Needs branch name"
+    exit 1
+  fi
+
   local current=`git rev-parse --abbrev-ref HEAD`
   gch @{u} &&
   gch -b $1 &&

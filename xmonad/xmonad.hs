@@ -135,7 +135,8 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList
     ]
 
 main = do
-    xmproc <- spawnPipe "$HOME/.xmonad/bar/dzen.sh"
+    xmproc <- spawnPipe "$HOME/.xmonad/bar"
+    -- xmproc <- spawnPipe "$HOME/.xmonad/oldbar/dzen.sh"
     xmonad $ ewmh defaultConfig
         { manageHook = manageDocks <+> myManageHooks
         , layoutHook = layout
