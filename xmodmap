@@ -3,3 +3,4 @@ clear Lock
 add Control = Control_L
 !keycode 78 = Caps_Lock
 keycode 118 = Control_L
+pointer = 1 2 3 4 5 0 0 8 9 10 11 12

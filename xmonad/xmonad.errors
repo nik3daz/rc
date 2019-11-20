@@ -1,13 +1,22 @@
 
 xmonad.hs:18:1: warning: [-Wdeprecations]
     Module ‘System.Cmd’ is deprecated: Use "System.Process" instead
+   |
+18 | import System.Cmd
+   | ^^^^^^^^^^^^^^^^^
 
-xmonad.hs:140:19: warning: [-Wdeprecations]
+xmonad.hs:141:19: warning: [-Wdeprecations]
     In the use of ‘defaultConfig’
     (imported from XMonad, but defined in XMonad.Config):
     Deprecated: "Use def (from Data.Default, and re-exported by XMonad and XMonad.Config) instead."
+    |
+141 |     xmonad $ ewmh defaultConfig
+    |                   ^^^^^^^^^^^^^
 
-xmonad.hs:148:70: warning: [-Wdeprecations]
+xmonad.hs:149:70: warning: [-Wdeprecations]
     In the use of ‘defaultConfig’
     (imported from XMonad, but defined in XMonad.Config):
     Deprecated: "Use def (from Data.Default, and re-exported by XMonad and XMonad.Config) instead."
+    |
+149 |         , handleEventHook = mconcat[ docksEventHook, handleEventHook defaultConfig ] <+> fullscreenEventHook
+    |                                                                      ^^^^^^^^^^^^^

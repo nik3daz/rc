@@ -10,8 +10,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'tpope/vim-fugitive'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'L9'
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'chriskempson/base16-vim'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
@@ -19,7 +19,7 @@ Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()            " required
 
-source /usr/share/vim/google/google.vim
+" source /usr/share/vim/google/google.vim
 
 syntax on
 

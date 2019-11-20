@@ -2,6 +2,7 @@
 
 xsettingsd &
 xcompmgr &
+xrandr --auto --output DP-3 --primary --right-of DP-2
 
 volumeicon &
 /usr/share/goobuntu-indicator/goobuntu_indicator.py &

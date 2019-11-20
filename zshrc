@@ -106,7 +106,11 @@ car() {
   builddir="${gndir}${buildtype}/"
   if [ $norun -eq 0 ]; then
     # ninja -j800 -l80 -C $builddir $target || return 1
-    autoninja -l80 -C $builddir $target || return 1
+    if [[ $target == *"webui_closure_compile"* && $noxvfb -eq 0 ]]; then
+      ninja -j20 -l80 -C $builddir $target || return 1
+    else
+      autoninja -l80 -C $builddir $target || return 1
+    fi
     if [[ $target == *"test"* && $noxvfb -eq 0 ]]; then
       ./testing/xvfb.py ${builddir}${target} $@
     else
@@ -149,7 +153,7 @@ gchpall() {
 ginsertnode() {
   if [ -z "$1" ]; then
     echo "Needs branch name"
-    exit 1
+    return
   fi
 
   local current=`git rev-parse --abbrev-ref HEAD`
@@ -204,6 +208,14 @@ upload() {
   git cl upload $@
 }
 
+screenshotdiff() {
+  local dir=$HOME/Downloads
+  local f1=`ls $dir | grep ^Screenshot | sed -n 'x;$p'`
+  local f2=`ls $dir | grep ^Screenshot | tail -1`
+  compare $dir/$f1 $dir/$f2 /tmp/diff.png &&
+  display /tmp/diff.png
+}
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -239,6 +251,8 @@ compinit
 alias gup='gb --set-upstream-to'
 
 alias ncar='car -n'
+
+alias gd~='gd HEAD~'
 
 #alias __git-checkout_main=_git_checkout
 #complete -o default -o nospace -F _git_checkout gchp

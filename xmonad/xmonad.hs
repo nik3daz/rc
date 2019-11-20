@@ -39,6 +39,7 @@ import XMonad.Layout.IM
 import XMonad.Layout.PerWorkspace
 import XMonad.Layout.LayoutHints
 import XMonad.Layout.Minimize
+import XMonad.Actions.Minimize
 import XMonad.ManageHook
 import Data.Ratio ((%))
 
@@ -104,19 +105,19 @@ myKeys = [ ("M-A", io (exitWith ExitSuccess))
          , ("M-j", focusDown)
          , ("M-a", spawn "if type xmonad; then xmonad --recompile && xmonad --restart; else xmessage xmonad not in \\$PATH: \"$PATH\"; fi") -- %! Restart xmonad
          , ("M-m", withFocused minimizeWindow)
-         , ("M-S-m", sendMessage RestoreNextMinimizedWin)
+         , ("M-S-m", withLastMinimized maximizeWindowAndFocus)
          , ("M-b", markBoring)
          , ("M-S-r", swapNextScreen)
          , ("M-r", rotAllUp)
          , ("M-S-b", clearBoring)
-         , ("M-z", viewScreen 0)
-         , ("M-x", viewScreen 1)
+         , ("M-z", viewScreen def 0)
+         , ("M-x", viewScreen def 1)
          , ("M-<Up>", windows W.focusUp)
          , ("M-<Down>", windows W.focusDown)
-         , ("M-<Left>", viewScreen 0)
-         , ("M-<Right>", viewScreen 1)
-         , ("M-S-<Left>", sequence_[screenWorkspace 1 >>= flip whenJust (windows . W.shift), viewScreen 0])
-         , ("M-S-<Right>", sequence_[screenWorkspace 0 >>= flip whenJust (windows . W.shift), viewScreen 1])
+         , ("M-<Left>", viewScreen def 0)
+         , ("M-<Right>", viewScreen def 1)
+         , ("M-S-<Left>", sequence_[screenWorkspace 1 >>= flip whenJust (windows . W.shift), viewScreen def 0])
+         , ("M-S-<Right>", sequence_[screenWorkspace 0 >>= flip whenJust (windows . W.shift), viewScreen def 1])
         ] ++ [ (otherModMasks ++ "M-" ++ [key], action tag)
           | (tag, key)  <- zip myWorkspaces "123456789"
           , (otherModMasks, action) <- [("", windows . lazyView)] -- was W.greedyView
