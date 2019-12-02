@@ -1,0 +1,46 @@
+[
+	{ "keys": ["ctrl+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+	{ "keys": ["ctrl+q"], "command": "noop" },
+	{ "keys": ["ctrl+f3"], "command": "find_under_expand" },
+	{ "keys": ["alt+shift+backspace"], "command": "move", "args": {"by": "subword_ends", "forward": false, "extend": true} },
+  { "keys": ["alt+o"], "command": "switch_file_deluxe", "args": {
+    "extensions": [".cpp", ".cxx", ".cc", ".c", "Qt.cpp", "Qt.h", ".hpp", ".hxx", ".h", "_p.h", "_p_p.h", ".ipp", ".inl", ".m", ".mm", ".js", "-extracted.js", ".html"]}
+  },
+  { "keys": ["ctrl+shift+o"], "command": "prompt_open_file" },
+  { "keys": ["ctrl+o"], "command": "jump_forward" },
+  { "keys": ["ctrl+i"], "command": "jump_back" },
+  { "keys": ["ctrl+shift+r"], "command": "reveal_in_side_bar"},
+  { "keys": ["ctrl+="], "command": "noop" },
+  { "keys": ["ctrl+-"], "command": "noop" },
+  { "keys": ["ctrl+alt+m"], "command": "toggle_menu"},
+  {
+    "keys": ["ctrl+shift+g"],
+    "command": "git_raw",
+    "args": {
+        "command": "git diff @{u}",
+        "may_change_files": false
+    }
+  },
+  { "keys": ["ctrl+,"], "command": "edit_settings", "args":
+        {
+            "base_file": "${packages}/Default/Preferences.sublime-settings",
+            "default": "// Settings in here override those in \"Default/Preferences.sublime-settings\",\n// and are overridden in turn by syntax-specific settings.\n{\n\t$0\n}\n"
+        }
+  },
+  { "button": "scroll_down", "modifiers": ["ctrl"], "command": "null" },
+  { "button": "scroll_up", "modifiers": ["ctrl"], "command": "null" },
+  { "keys": [")"], "command": "insert", "args": {"characters": ")"}, "context":
+      [
+          { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+          { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+          { "key": "following_text", "operator": "regex_contains", "operand": "^\\)", "match_all": true }
+      ]
+  },
+  { "keys": ["("], "command": "insert_snippet", "args": {"contents": "("}, "context":
+    [
+      { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+      { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+      { "key": "following_text", "operator": "regex_contains", "operand": "^(?:\t| |\\)|]|;|\\}|$)", "match_all": true }
+    ]
+  },
+]

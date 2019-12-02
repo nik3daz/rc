@@ -1,0 +1,27 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Boxy Theme",
+		"C++ Starting Kit",
+		"ChromiumXRefs",
+		"Clang Format",
+		"Colorsublime",
+		"GN",
+		"HTML-CSS-JS Prettify",
+		"Jinja2",
+		"Less Tabs",
+		"Oasis Theme",
+		"Package Control",
+		"PackageResourceViewer",
+		"SelectUntil",
+		"SideBarEnhancements",
+		"Switch File Deluxe",
+		"Text Pastry",
+		"Theme - Soda",
+		"TidyTabs"
+	]
+}

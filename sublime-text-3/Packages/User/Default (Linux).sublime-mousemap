@@ -1,0 +1,6 @@
+[
+  // Change font size with ctrl+scroll wheel
+  { "button": "scroll_down", "modifiers": ["ctrl"], "command": "scroll_lines", "args": {"amount": -3.0 } },
+  { "button": "scroll_up", "modifiers": ["ctrl"], "command": "scroll_lines", "args": {"amount": 3.0 }  }
+]
+

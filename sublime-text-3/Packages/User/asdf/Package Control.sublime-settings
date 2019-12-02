@@ -1,0 +1,26 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"install_prereleases":
+	[
+		"Package Control"
+	],
+	"installed_packages":
+	[
+		"Chromium X-Refs",
+		"Clang Format",
+		"GitGutter",
+		"HTML-CSS-JS Prettify",
+		"Javascript Beautify",
+		"Less Tabs",
+		"SelectUntil",
+		"SideBarEnhancements",
+		"Switch File Deluxe"
+	],
+	"repositories":
+	[
+		"https://packagecontrol.io/prerelease/packages.json"
+	]
+}

@@ -1,0 +1,7 @@
+{
+  "BasedOnStyle": "Chromium",
+
+  "JavaScriptQuotes": "Leave",
+
+  "AllowShortFunctionsOnASingleLine": "Empty"
+}

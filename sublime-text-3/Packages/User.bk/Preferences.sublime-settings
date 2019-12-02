@@ -1,0 +1,61 @@
+{
+	"added_words":
+	[
+		"app",
+		"destructors",
+		"const",
+		"param"
+	],
+	"always_show_minimap_viewport": true,
+	"color_scheme": "Packages/Boxy Theme/schemes/Boxy Tomorrow.tmTheme",
+	"dictionary": "Packages/Language - English/en_US.dic",
+	"ensure_newline_at_eof_on_save": true,
+	"fade_fold_buttons": false,
+	"font_face": "Fira Code",
+	"font_size": 12,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"GitGutter",
+		"Less Tabs",
+		"SideBarEnhancements",
+		"Vintage"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"indent_to_bracket": true,
+	"index_exclude_patterns":
+	[
+		"*.log",
+		"*.png",
+		"*.txt",
+		"*.xtb",
+		"*.db",
+		"*.crx",
+		"*.json",
+		"*.dat",
+		"*.zip",
+		"*.html"
+	],
+	"index_files": true,
+	"overlay_scroll_bars": "enabled",
+	"rulers":
+	[
+		80
+	],
+	"show_encoding": true,
+	"show_line_endings": true,
+	"spell_check": true,
+	"tab_size": 2,
+	"theme": "Boxy Tomorrow.sublime-theme",
+	"theme_find_panel_materialized": true,
+	"theme_find_panel_size_xxs": true,
+	"theme_font_md": true,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"update_check": false,
+	"wrap_width": 0
+}

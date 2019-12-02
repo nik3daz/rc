@@ -1,0 +1,57 @@
+env:
+    global:
+        - PACKAGE="EasyClangComplete"
+        - SUBLIME_TEXT_VERSION="3"
+
+sudo: false
+language: python
+python: "3.6"
+
+matrix:
+    include:
+    - os: linux
+      dist: xenial
+      env: DISTRO="Ubuntu"
+      sudo: required
+      services:
+      - xvfb
+    - os: osx
+      env: DISTRO="OSX"
+      language: generic
+
+before_install:
+    - curl -OL https://raw.githubusercontent.com/randy3k/UnitTesting/master/sbin/travis.sh
+    - if [ "$TRAVIS_OS_NAME" == "linux"  ]; then
+            pip install --upgrade pip pycodestyle pep257;
+            pip install --upgrade coverage codacy-coverage;
+            pip install --upgrade mkdocs==1.0.4 mkdocs-material;
+            sudo apt-get update -yqq;
+            sudo apt-get install -y clang;
+      fi
+
+install:
+    - sh travis.sh bootstrap
+    - sh travis.sh install_package_control
+
+script:
+    - ls
+    - sh travis.sh run_tests --coverage
+    - if [ "$TRAVIS_OS_NAME" == "linux"  ]; then
+            coverage xml -o coverage.xml;
+            mkdocs build --verbose --clean --strict;
+      fi
+
+after_success:
+    - python-codacy-coverage -r coverage.xml
+
+deploy:
+ provider: pages
+ skip_cleanup: true
+ github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+ local_dir: site
+ on:
+    branch: master
+    condition: $DISTRO = Ubuntu
+
+notifications:
+    email: false

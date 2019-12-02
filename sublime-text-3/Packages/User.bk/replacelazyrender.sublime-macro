@@ -1,0 +1,207 @@
+[
+	{
+		"args":
+		{
+			"by": "lines",
+			"forward": false
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": true
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"by": "lines",
+			"forward": false
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"to": "tag"
+		},
+		"command": "expand_selection"
+	},
+	{
+		"args": null,
+		"command": "indent"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": true
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"characters": "<"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"insert_slash": true
+		},
+		"command": "close_tag"
+	},
+	{
+		"args": null,
+		"command": "auto_indent_tag"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": true
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": true
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"forward": true
+		},
+		"command": "delete_word"
+	},
+	{
+		"args":
+		{
+			"characters": "cr-lazy-ren"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "der"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"by": "lines",
+			"forward": false
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": false
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": false
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"to": "tag"
+		},
+		"command": "expand_selection"
+	},
+	{
+		"args": null,
+		"command": "reverse_select"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": false
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"extend": false,
+			"to": "bol"
+		},
+		"command": "move_to"
+	},
+	{
+		"args":
+		{
+			"by": "characters",
+			"forward": true
+		},
+		"command": "move"
+	},
+	{
+		"args":
+		{
+			"forward": true
+		},
+		"command": "delete_word"
+	},
+	{
+		"args":
+		{
+			"characters": "cr-laz"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"characters": "y-render"
+		},
+		"command": "insert"
+	},
+	{
+		"args":
+		{
+			"extend": false,
+			"to": "bol"
+		},
+		"command": "move_to"
+	},
+	{
+		"args": null,
+		"command": "unindent"
+	},
+	{
+		"args":
+		{
+			"extend": false,
+			"to": "eol"
+		},
+		"command": "move_to"
+	},
+	{
+		"args":
+		{
+			"characters": "\n<template>"
+		},
+		"command": "insert"
+	}
+]

@@ -1,0 +1,13 @@
+{
+	// "clients":
+	// {
+	// 	"clangd":
+	// 	{
+	// 		"enabled": true,
+ //      "command": ["clangd", "-background-index", "-limit-result=10"],
+	// 	}
+	// },
+ //  "only_show_lsp_completions": true,
+ //  "log_server": true,
+ //  "auto_show_diagnostics_panel": false,
+}
