@@ -178,6 +178,10 @@ greplace() {
   sed -i "s/$1/$2/g" `gdu --name-only`
 }
 
+greplaceall() {
+  sed -i "s/$1/$2/g" `gg --name-only $1`
+}
+
 greview() {
   echo $1 | grep '[^0-9]' && echo "error: CL numbers only" && exit 1
   gb -D $1 2> /dev/null

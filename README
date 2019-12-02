@@ -1,1 +1,14 @@
 My rc (etc) files.
+
+Usage:
+
+git clone https://github.com/nik3daz/rc.git ~/.rc
+
+make zsh xmonad
+
+
+Notes:
+
+zsh
+- Install https://github.com/powerline/fonts
+- Set default shell to zsh

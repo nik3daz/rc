@@ -22,6 +22,10 @@ gitconfig:
 	rm -f $(HOME)/.gitconfig
 	ln -s $(RC)/gitconfig $(HOME)/.gitconfig
 
+subl:
+	rm -f $(HOME)/.config/sublime-text-3
+	ln -s $(RC)/sublime-text-3 $(HOME)/.config/sublime-text-3
+
 zsh:
 	rm -f $(HOME)/.zshrc
 	ln -s $(RC)/zshrc $(HOME)/.zshrc
