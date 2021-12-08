@@ -3,11 +3,12 @@
 xsettingsd &
 xcompmgr &
 xrandr --auto --output DP-3 --primary --right-of DP-2
+xrdb -merge ~/.Xresources
 
 volumeicon &
 /usr/share/goobuntu-indicator/goobuntu_indicator.py &
 
-if [ "z$DISPLAY" = "z:0" ]; then
+if [ -n "$DISPLAY" ]; then
   xscreensaver &
 else
   . $HOME/.profile

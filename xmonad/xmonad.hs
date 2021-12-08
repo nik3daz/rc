@@ -156,7 +156,7 @@ main = do
         , ((mod4Mask, xK_f), fullFloatFocused)
         , ((mod4Mask, xK_g), floatFocused)
         , ((mod4Mask, xK_p), spawn "gmrun")
-        , ((0, xK_Print), spawn "~/local/bin/snipit")
+        , ((0, xK_Print), spawn "/usr/bin/snipit --notify --copy --direct --noopen -p")
         ]
 
 myManageHooks = composeAll

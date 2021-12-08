@@ -36,7 +36,7 @@ __hostname() {
   hostname -s | sed -E 's/dhcp-(.*)$/mac/'
 }
 export PS1='\[\033[01;32m\]# $(__hostname)\[\033[01;34m\] \w \[\033[31m\]$(__git_ps1 "(%s)")\n\[\033[01;32m\]> \[\033[00m\]'
-export PROMPT_COMMAND='~/.rc/scripts/prompt_command'
+#export PROMPT_COMMAND='~/.rc/scripts/prompt_command'
 export GIT_MERGE_AUTOEDIT=no
 
 # If this is an xterm set the title to user@host:dir

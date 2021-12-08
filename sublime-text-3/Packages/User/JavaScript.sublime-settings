@@ -1,7 +1,0 @@
-{
-	"auto_complete_selector": "source, comment, text.plain, meta.tag, punctuation.definition.tag.begin, css",
-	"extensions":
-	[
-		"idl"
-	]
-}

@@ -57,6 +57,7 @@ export PATH="$HOME/local/go/bin:$HOME/local/depot_tools:$HOME/depot_tools:$HOME/
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+source /etc/bash_completion.d/g4d
 
 fpath=(~/.zsh $fpath)
 
@@ -87,14 +88,16 @@ localserver() {
 
 car() {
   local OPTIND
-  local gndir="out/"
+  local gndir="out-chromeos/"
   local buildtype="Default"
   local norun=0
   local noxvfb=0
+  local verbose=''
   while getopts "t:d:nx" o; do
     case "$o" in
       t) buildtype="$OPTARG";;
       d) gndir="${OPTARG%/}/";;
+      v) verbose='-v';;
       n) norun=1;;
       x) noxvfb=1;;
       ?) echo >&2 "Usage: car [-d dir] [-x] [-n] target [opts]"; return 1;;
@@ -107,9 +110,9 @@ car() {
   if [ $norun -eq 0 ]; then
     # ninja -j800 -l80 -C $builddir $target || return 1
     if [[ $target == *"webui_closure_compile"* && $noxvfb -eq 0 ]]; then
-      ninja -j20 -l80 -C $builddir $target || return 1
+      ninja -j20 $verbose -l60 -C $builddir $target || return 1
     else
-      autoninja -l80 -C $builddir $target || return 1
+      autoninja -l60 $verbose -C $builddir $target || return 1
     fi
     if [[ $target == *"test"* && $noxvfb -eq 0 ]]; then
       ./testing/xvfb.py ${builddir}${target} $@
@@ -258,8 +261,20 @@ alias ncar='car -n'
 
 alias gd~='gd HEAD~'
 
+alias src='cd ~/local/src'
+alias nodedir='cd ~/local/src/third_party/node'
+alias mwc='cd ~/local/src/third_party/material_web_components'
+
 #alias __git-checkout_main=_git_checkout
 #complete -o default -o nospace -F _git_checkout gchp
 
 #alias __git-merge-base_main=_git_merge_base
 compdef _git gdgmb=git-merge-base
+alias startcodeserver='screen -d -m zsh -c "/usr/local/google/home/calamity/Downloads/code-server2.1698-vsc1.41.1-linux-x86_64/code-server --auth none --host localhost --port 8123 ~/local/src --max-memory 4096"'
+
+start_env() {
+  startcodeserver
+  goma_ctl ensure_start
+}
+
+export NODE_PATH='/usr/local/lib/node_modules'
