@@ -53,7 +53,7 @@ plugins=(gitfast zsh-syntax-highlighting)
 
 # User configuration
 
-export PATH="$HOME/local/go/bin:$HOME/local/depot_tools:$HOME/depot_tools:$HOME/local/rc_scripts:$HOME/local/bin:$HOME/local/go/bin:$HOME/local/depot_tools:$HOME/depot_tools:$HOME/local/rc_scripts:$HOME/local/bin:/usr/lib/google-golang/bin:/usr/local/buildtools/java/jdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/local/src/third_party/android_tools/sdk/platform-tools:$HOME/node_modules/bin"
+export PATH="$HOME/local/go/bin:$HOME/local/depot_tools:$HOME/depot_tools:$HOME/local/rc_scripts:$HOME/local/bin:$HOME/local/go/bin:$HOME/local/depot_tools:$HOME/depot_tools:$HOME/local/rc_scripts:$HOME/local/bin:/usr/lib/google-golang/bin:/usr/local/buildtools/java/jdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/local/src/third_party/android_tools/sdk/platform-tools:$HOME/node_modules/bin:$HOME/local/crosfleet"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -63,6 +63,7 @@ fpath=(~/.zsh $fpath)
 
 alias gm='git map-branches'
 alias gchu='git checkout @{u}'
+alias gdun='git diff --name-only @{u} | cat'
 alias gdu='git diff @{u}'
 alias gdt='git difftool -y'
 alias gdtu='git difftool -y @{u}'
@@ -80,6 +81,10 @@ loadreview() {
 
 resource() {
   . ~/.zshrc
+}
+
+gdn() {
+  git diff --name-only $@ | cat
 }
 
 localserver() {
@@ -117,7 +122,7 @@ car() {
     if [[ $target == *"test"* && $noxvfb -eq 0 ]]; then
       ./testing/xvfb.py ${builddir}${target} $@
     else
-      ${builddir}${target} $@ --enable-pixel-output-in-tests --ui-test-action-max-timeout=1000000 --test-launcher-timeout=1000000
+      ${builddir}${target} $@ --enable-pixel-output-in-tests --use-system-clipboard --ui-test-action-max-timeout=1000000 --test-launcher-timeout=1000000
     fi
   else
     autoninja -l80 -C $builddir $target $@ || return 1
@@ -137,6 +142,9 @@ gdgmb() {
 }
 
 gchp() {
+  if [ -z "$1" ]; then
+    1=HEAD
+  fi
   for b in "$@"; do
     git checkout "$b" && git pull 1>/dev/null;
     if [ $? -ne 0 ]; then
@@ -270,7 +278,8 @@ alias mwc='cd ~/local/src/third_party/material_web_components'
 
 #alias __git-merge-base_main=_git_merge_base
 compdef _git gdgmb=git-merge-base
-alias startcodeserver='screen -d -m zsh -c "/usr/local/google/home/calamity/Downloads/code-server2.1698-vsc1.41.1-linux-x86_64/code-server --auth none --host localhost --port 8123 ~/local/src --max-memory 4096"'
+export CODESERVER_DIR="~/Downloads/code-server-4.0.2-linux-amd64"
+alias startcodeserver="screen -d -m zsh -c \"$CODESERVER_DIR/bin/code-server --auth none --host localhost --port 8123 ~/local/src\""
 
 start_env() {
   startcodeserver
@@ -278,3 +287,26 @@ start_env() {
 }
 
 export NODE_PATH='/usr/local/lib/node_modules'
+
+gen_local_webui_tsconfig() {
+  OUT_DIR=$1
+  SRC_DIR=$2
+  REL_OUT_DIR=`realpath --relative-to=$SRC_DIR $OUT_DIR`
+  echo '{ "references": [{"path": "'$REL_OUT_DIR'/gen/'$SRC_DIR'/tsconfig.json" }]}' > $SRC_DIR/tsconfig.json
+}
+
+reldir() {
+  TO=$1
+  FROM=$2
+  if [ -z $FROM ]; then
+    FROM=.
+  fi;
+  realpath --relative-to=$FROM $TO
+}
+
+startup() {
+  startcodeserver
+  goma_ctl ensure_start
+}
+
+source /etc/bash_completion.d/hgd

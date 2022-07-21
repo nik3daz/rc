@@ -4,6 +4,7 @@ xsettingsd &
 xcompmgr &
 xrandr --auto --output DP-3 --primary --right-of DP-2
 xrdb -merge ~/.Xresources
+/usr/lib/notification-daemon/notification-daemon &
 
 volumeicon &
 /usr/share/goobuntu-indicator/goobuntu_indicator.py &
