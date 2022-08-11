@@ -1,3 +1,4 @@
+export ZSH_DISABLE_COMPFIX=true
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -309,4 +310,9 @@ startup() {
   goma_ctl ensure_start
 }
 
+
+alias mountsshfs='sshfs calamity@freshprince.syd.corp.google.com:/usr/local/google/home/calamity/local/src remote_src'
+alias sshdesk='ssh freshprince.syd.corp.google.com'
+alias sshcloudtop='ssh asperitas.c.googlers.com'
+alias sshcodeserver='ssh -L9000:localhost:8123 freshprince.syd.corp.google.com'
 source /etc/bash_completion.d/hgd
