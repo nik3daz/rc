@@ -58,7 +58,7 @@ export PATH="$HOME/local/go/bin:$HOME/local/depot_tools:$HOME/depot_tools:$HOME/
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
-source /etc/bash_completion.d/g4d
+source /etc/bash_completion.d/hgd 2>/dev/null
 
 fpath=(~/.zsh $fpath)
 
@@ -315,4 +315,4 @@ alias mountsshfs='sshfs calamity@freshprince.syd.corp.google.com:/usr/local/goog
 alias sshdesk='ssh freshprince.syd.corp.google.com'
 alias sshcloudtop='ssh asperitas.c.googlers.com'
 alias sshcodeserver='ssh -L9000:localhost:8123 freshprince.syd.corp.google.com'
-source /etc/bash_completion.d/hgd
+

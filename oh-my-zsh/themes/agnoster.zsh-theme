@@ -88,8 +88,25 @@ prompt_end() {
 
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
+  local hostname=`hostname -s`
+  local bg="yellow"
+  local fg="black"
+
+  if [[ "$hostname" == "linux-machine" ]]; then
+    bg="black"
+    fg="white"
+  fi
+
+  if [[ "$hostname" == "asperitas" ]]; then
+    bg="white"
+  fi
+
+  if [[ "$hostname" == "calamity-macbookpro2" ]]; then
+    hostname="havarti"
+    bg="yellow"
+  fi
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)%m"
+    prompt_segment $bg $fg "%(!.%{%F{yellow}%}.)$hostname"
   fi
 }
 
