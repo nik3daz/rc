@@ -1,10 +1,32 @@
 [user]
-	name = Christopher Lam
 	email = calamity@chromium.org
-[color]
-	ui = true
+	name = Christopher Lam
 [core]
 	autocrlf = false
 	filemode = false
+	deltaBaseCacheLimit = 1G
+	mergeoptions = --no-edit
+[merge]
+	conflictstyle = diff3
+	tool = vscode
 [branch]
-  autosetupmerge = always
+	autosetupmerge = always
+	skip-deps-uploads = True
+[branch "branch_name"]
+	skip-deps-uploads = True
+[alias]
+	serve = daemon --verbose --export-all --base-path=src.git --reuseaddr --strict-paths --enable=receive-pack src.git/
+[push]
+	default = simple
+[http]
+	cookiefile = /usr/local/google/home/calamity/.gitcookies
+[multidiff]
+	tool = gvim "+syntax on" "+colorscheme jellybeans2" "+set termguicolors"  -c 'silent call TabMultiDiff()'  -f
+[mergetool "vscode"]
+	cmd = code $MERGED
+[diff]
+	tool = vscode
+[difftool "vscode"]
+  cmd = ~/fun/codediff.sh $LOCAL $REMOTE
+[color]
+	ui = auto
