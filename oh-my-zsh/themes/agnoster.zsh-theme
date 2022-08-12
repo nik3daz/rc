@@ -102,7 +102,8 @@ prompt_context() {
   fi
 
   if [[ "$hostname" == "calamity-macbookpro2" ]]; then
-    bg="white"
+    hostname="havarti"
+    bg="yellow"
   fi
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
     prompt_segment $bg $fg "%(!.%{%F{yellow}%}.)$hostname"
