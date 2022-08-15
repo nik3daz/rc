@@ -88,8 +88,25 @@ prompt_end() {
 
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
+  local hostname=`hostname -s`
+  local bg="yellow"
+  local fg="black"
+
+  if [[ "$hostname" == "linux-machine" ]]; then
+    bg="black"
+    fg="white"
+  fi
+
+  if [[ "$hostname" == "asperitas" ]]; then
+    bg="white"
+  fi
+
+  if [[ "$hostname" == "calamity-macbookpro2" ]]; then
+    hostname="havarti"
+    bg="yellow"
+  fi
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)%m"
+    prompt_segment $bg $fg "%(!.%{%F{yellow}%}.)$hostname"
   fi
 }
 
@@ -161,37 +178,21 @@ prompt_bzr() {
 prompt_hg() {
   (( $+commands[hg] )) || return
   local rev st branch
-  if $(hg id >/dev/null 2>&1); then
-    if $(hg prompt >/dev/null 2>&1); then
-      if [[ $(hg prompt "{status|unknown}") = "?" ]]; then
-        # if files are not added
-        prompt_segment red white
-        st='±'
-      elif [[ -n $(hg prompt "{status|modified}") ]]; then
-        # if any modification
-        prompt_segment yellow black
-        st='±'
-      else
-        # if working copy is clean
-        prompt_segment green $CURRENT_FG
-      fi
-      echo -n $(hg prompt "☿ {rev}@{branch}") $st
-    else
-      st=""
-      rev=$(hg id -n 2>/dev/null | sed 's/[^-0-9]//g')
-      branch=$(hg id -b 2>/dev/null)
-      if `hg st | grep -q "^\?"`; then
-        prompt_segment red black
-        st='±'
-      elif `hg st | grep -q "^[MA]"`; then
-        prompt_segment yellow black
-        st='±'
-      else
-        prompt_segment green $CURRENT_FG
-      fi
-      echo -n "☿ $rev@$branch" $st
-    fi
-  fi
+#  if $(hg id >/dev/null 2>&1); then
+#      st=""
+#      rev=$(hg id -n 2>/dev/null | sed 's/[^-0-9]//g')
+#      branch=$(hg id -b 2>/dev/null)
+#      if `hg st | grep -q "^\?"`; then
+#        prompt_segment red black
+#        st='±'
+#      elif `hg st | grep -q "^[MA]"`; then
+#        prompt_segment yellow black
+#        st='±'
+#      else
+#        prompt_segment green $CURRENT_FG
+#      fi
+#      echo -n "☿ $rev@$branch" $st
+#  fi
 }
 
 # Dir: current working directory
