@@ -70,6 +70,9 @@ let g:ycm_global_ycm_extra_conf = '~/Projects/chromium/src/tools/vim/chromium.yc
 set t_Co=256
 set background=dark
 set termguicolors
+let g:jellybeans_overrides = {
+      \    'background': { 'guibg': '022527' },
+      \}
 colorscheme jellybeans
 " colorscheme base16-solarized
 
