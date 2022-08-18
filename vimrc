@@ -71,7 +71,7 @@ set t_Co=256
 set background=dark
 set termguicolors
 let g:jellybeans_overrides = {
-      \    'background': { 'guibg': '022527' },
+      \    'background': { 'guibg': '002327' },
       \}
 colorscheme jellybeans
 " colorscheme base16-solarized

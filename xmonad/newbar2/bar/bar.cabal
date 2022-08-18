@@ -36,7 +36,7 @@ executable bar
 
   ghc-options:         -threaded -O2 -funfolding-use-threshold=16 -optc-O3 -fexcess-precision 
   
-  build-depends:       base >=4.9 && <4.10
+  build-depends:       base >=4.9
                       ,containers >= 0.5
                       ,X11 >= 1.8
                       ,bytestring

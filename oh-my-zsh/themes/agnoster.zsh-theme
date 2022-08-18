@@ -92,9 +92,9 @@ prompt_context() {
   local bg="yellow"
   local fg="black"
 
-  if [[ "$hostname" == "linux-machine" ]]; then
-    bg="black"
-    fg="white"
+  if [[ "$hostname" == "planetexpress" ]]; then
+    bg="green"
+    fg="red"
   fi
 
   if [[ "$hostname" == "asperitas" ]]; then
@@ -197,7 +197,7 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment blue $CURRENT_FG '%~'
+  prompt_segment blue red '%~'
 }
 
 # Virtualenv: current working virtualenv

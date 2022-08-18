@@ -142,6 +142,7 @@ main = do
         { manageHook = manageDocks <+> myManageHooks
         , layoutHook = layout
         , logHook            = myLogHook xmproc
+        , terminal = "xfce4-terminal"
         , focusedBorderColor = "#FF0000"
         , normalBorderColor = "#4B0000"
         , modMask = mod4Mask     -- Rebind Mod to the Windows key
