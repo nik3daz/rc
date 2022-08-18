@@ -313,7 +313,11 @@ startup() {
 
 alias mountsshfs='sshfs calamity@freshprince.syd.corp.google.com:/usr/local/google/home/calamity/local/src remote_src'
 alias sshdesk='ssh freshprince.syd.corp.google.com'
-alias sshcloudtop='ssh asperitas.c.googlers.com'
+alias asperitas='ssh asperitas.c.googlers.com'
 alias sshcodeserver='ssh -L9000:localhost:8123 freshprince.syd.corp.google.com'
 
+hash -d g=/google/src/cloud/calamity
+hash -d yta=/google/src/cloud/calamity/yt-android/google3
+
+alias epg_server=/google/src/head/depot/google3/video/youtube/utils/elements/tools/playground/epg_server
 alias yt_crow=blaze-bin/video/youtube/android/tools/yt_crow/yt_crow

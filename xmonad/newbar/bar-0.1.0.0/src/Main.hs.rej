@@ -1,0 +1,59 @@
+--- src/Main.hs
++++ src/Main.hs
+@@ -45,10 +45,10 @@ barHeight :: Int
+ barHeight = 24
+ 
+ defaultFont :: String
+-defaultFont = "-*-*-medium-r-normal--15-*-*-*-*-*-iso10646-*"
++defaultFont = "-*-latin modern sans-*-*-*-*-17-*-*-*-*-*-*-*"
+ 
+ barBackground :: String
+-barBackground = "#BEBEBE"
++barBackground = "#2F1B40"
+ 
+ infoBackground :: String
+ infoBackground = "#181838"
+@@ -61,15 +61,15 @@ defaultTextColor = "#C7AE86"
+ 
+ trayerCmd :: Int -> Int -> String
+ trayerCmd = printf "trayer --expand false --edge top --align right\
+-             \ --widthtype request --height %d --margin %d"
++             \ --widthtype request --height %d --margin %d --monitor 1 --transparent true --alpha 0 --tint 0x2F1B40"
+ 
+ -- Tooltip graphs refreshing while hidden
+ persistentTimers :: [Period]
+ persistentTimers = [batteryGraphTimer, netstatusRefresh]
+ 
+ bars :: [Bar]
+---bars = [bar1, bar2]
+-bars = [bar1]
++bars = [bar1, bar2]
++-- bars = [bar1]
+ 
+ bar1 :: Bar
+ bar1 = Bar barBackground barHeight (XineramaScreen 0) GravityTop [
+@@ -79,20 +79,16 @@ bar1 = Bar barBackground barHeight (XineramaScreen 0) GravityTop [
+               # clockTooltip,
+         logtm cpu # cpuTooltip # OnClick "top.sh",
+         logtm mem # memTooltip,
+-        logtm (net "eth0"),
+-        logtm (net "brkvm"),
+-        logtm (net "wlp2s0"),
+-        battery "BAT0",
+-        battery "BAT1",
++        logtm (net "eno1"),
+         trayer,
+ 
+-        title # LeftPadding 5 # RightPadding 2 #
++        title # LeftPadding 2 # RightPadding 2 #
+                 BackgroundColor barBackground #
+-                JustifyLeft # TextColor "#000000"
++                JustifyLeft # TextColor "#000000" # Width 5000
+       ]
+ 
+ bar2 :: Bar
+-bar2 = Bar barBackground (barHeight*2) (XineramaScreen 0) GravityTop [
++bar2 = Bar barBackground (barHeight) (XineramaScreen 1) GravityTop [
+         clock # TimeFormat "%R" #
+             Width 60 # RightPadding 4 #
+             LocalTimeZone # BackgroundColor infoBackground #
