@@ -316,3 +316,4 @@ alias sshdesk='ssh freshprince.syd.corp.google.com'
 alias sshcloudtop='ssh asperitas.c.googlers.com'
 alias sshcodeserver='ssh -L9000:localhost:8123 freshprince.syd.corp.google.com'
 
+alias yt_crow=blaze-bin/video/youtube/android/tools/yt_crow/yt_crow
