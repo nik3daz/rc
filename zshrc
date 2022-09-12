@@ -190,6 +190,10 @@ greplace() {
   sed -i "s/$1/$2/g" `gdu --name-only`
 }
 
+hreplace() {
+  sed -i "s/$1/$2/g" `hg pstatus -n`
+}
+
 greplaceall() {
   sed -i "s/$1/$2/g" `gg --name-only $1`
 }
@@ -310,6 +314,17 @@ startup() {
   goma_ctl ensure_start
 }
 
+alias hd='hg diff'
+alias hpd='hg pdiff'
+alias hdu='hg pdiff'
+alias ha='hg amend'
+alias hc='hg amend'
+alias hb='hg commit'
+alias hch='hg update'
+alias hu='hg update'
+alias hm='hg xl'
+alias hx='hg xl'
+alias hchu='hg prev'
 
 alias mountsshfs='sshfs calamity@freshprince.syd.corp.google.com:/usr/local/google/home/calamity/local/src remote_src'
 alias sshdesk='ssh freshprince.syd.corp.google.com'
@@ -321,3 +336,4 @@ hash -d yta=/google/src/cloud/calamity/yt-android/google3
 
 alias epg_server=/google/src/head/depot/google3/video/youtube/utils/elements/tools/playground/epg_server
 alias yt_crow=blaze-bin/video/youtube/android/tools/yt_crow/yt_crow
+alias plscrow='cd .;blaze build video/youtube/android/tools/yt_crow'
