@@ -1,7 +1,14 @@
-keycode 66 = Control_L
+keycode 66  = Control_L
 clear Lock
 add Control = Control_L
 !keycode 78 = Caps_Lock
 keycode 118 = Control_L
-pointer = 1 2 3 4 5 0 0 8 9 10 11 12
-keycode 78 = U1F937
+pointer     = 1 2 3 4 5 0 0 8 9 10 11 12
+keycode 78  = U1F937 U000FC
+keysym u    = u U U000FC U000DC
+!clear Mod1
+!clear Mod2
+!clear Mod3
+!clear Mod4
+!clear Mod5
+add Mod1    = Alt_L
