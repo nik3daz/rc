@@ -118,6 +118,7 @@ myKeys = [ ("M-A", io (exitWith ExitSuccess))
          , ("M-<Right>", viewScreen def 1)
          , ("M-S-<Left>", sequence_[screenWorkspace 1 >>= flip whenJust (windows . W.shift), viewScreen def 0])
          , ("M-S-<Right>", sequence_[screenWorkspace 0 >>= flip whenJust (windows . W.shift), viewScreen def 1])
+         , ("M-S-l", safeSpawn "xset" ["dpms", "force", "standby"])
         ] ++ [ (otherModMasks ++ "M-" ++ [key], action tag)
           | (tag, key)  <- zip myWorkspaces "123456789"
           , (otherModMasks, action) <- [("", windows . lazyView)] -- was W.greedyView
