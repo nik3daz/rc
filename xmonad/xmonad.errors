@@ -5,18 +5,18 @@ xmonad.hs:18:1: warning: [-Wdeprecations]
 18 | import System.Cmd
    | ^^^^^^^^^^^^^^^^^
 
-xmonad.hs:141:19: warning: [-Wdeprecations]
+xmonad.hs:142:19: warning: [-Wdeprecations]
     In the use of ‘defaultConfig’
     (imported from XMonad, but defined in XMonad.Config):
     Deprecated: "Use def (from Data.Default, and re-exported by XMonad and XMonad.Config) instead."
     |
-141 |     xmonad $ ewmh defaultConfig
+142 |     xmonad $ ewmh defaultConfig
     |                   ^^^^^^^^^^^^^
 
-xmonad.hs:150:70: warning: [-Wdeprecations]
+xmonad.hs:151:70: warning: [-Wdeprecations]
     In the use of ‘defaultConfig’
     (imported from XMonad, but defined in XMonad.Config):
     Deprecated: "Use def (from Data.Default, and re-exported by XMonad and XMonad.Config) instead."
     |
-150 |         , handleEventHook = mconcat[ docksEventHook, handleEventHook defaultConfig ] <+> fullscreenEventHook
+151 |         , handleEventHook = mconcat[ docksEventHook, handleEventHook defaultConfig ] <+> fullscreenEventHook
     |                                                                      ^^^^^^^^^^^^^
