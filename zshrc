@@ -314,6 +314,15 @@ startup() {
   goma_ctl ensure_start
 }
 
+textproto2gcl() {
+  local textprotopath = $1
+  local message = $2
+  local protodeps = $3
+  local outgcl = `echo $textprotopath | sed 's/\.proto$/.gcl/'`
+  echo $outgcl
+  /usr/bin/gcl fromascii $textprotopath --message $message --proto_path $PWD --proto $protodeps
+}
+
 alias hd='hg diff'
 alias hpd='hg pdiff'
 alias hdu='hg pdiff'
