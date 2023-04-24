@@ -76,11 +76,13 @@ alias oops='git commit -a --amend'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+[ -s "$HOME/.googlerc" ] && . "$HOME/.googlerc"
+
 loadreview() {
   gch -b $1 && git cl patch $@
 }
 
-resource() {
+rs() {
   . ~/.zshrc
 }
 
@@ -314,6 +316,39 @@ startup() {
   goma_ctl ensure_start
 }
 
+hrbchildren() {
+  local rebase_target=$1
+  if [ -z $rebase_target ]; then
+    rebase_target='p4head'
+  fi
+
+  local children=("${(@f)$(hg log -r "children(.) and draft() and not obsolete()" -T'{node|short}\n')}")
+
+  for c in $children; do
+    hg rebase -s $c -d $rebase_target
+    if [ $? -ne 0 ]; then
+      echo "$c failed to rebase onto $rebase_target";
+      return 1;
+    fi
+  done
+}
+
+harchive() {
+  local rev=$1
+  if [ -z $rev ]; then
+    rev=.
+  fi
+  hg update $rev
+  hg upload .
+  local cl`=hg exportedcl .`
+  local desc=`g4 -F "%desc%#archive" describe $(hg exportedcl .)`
+  echo $desc
+  hg reword -m "$desc"
+  hg upload .
+  hg cls-setnumber -c . --remove
+  hg drop . --prune --skip-confirmation
+}
+
 alias hd='hg diff'
 alias hpd='hg pdiff'
 alias hdu='hg pdiff'
@@ -326,7 +361,6 @@ alias hx='hg xl'
 alias hchu='hg prev'
 alias hobs='hg obslog -p'
 alias hup='hg upload chain'
-alias hpub='hg fix && build_cleaner && tricorder analyze -categories Lint,TSChecks -fix && hg upload chain'
 alias hupa='hg upload --all'
 alias hru='hg revert -r p4base '
 
