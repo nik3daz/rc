@@ -15,7 +15,8 @@ import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Util.EZConfig(additionalKeysP)
 import XMonad.Actions.CycleWS
 import XMonad.Actions.RotSlaves
-import System.Cmd
+import XMonad.Config
+import System.Process
 import System.Environment
 import System.IO
 import Data.Monoid
@@ -116,8 +117,8 @@ myKeys = [ ("M-A", io (exitWith ExitSuccess))
          , ("M-<Down>", windows W.focusDown)
          , ("M-<Left>", viewScreen def 0)
          , ("M-<Right>", viewScreen def 1)
-         , ("M-S-<Left>", sequence_[screenWorkspace 1 >>= flip whenJust (windows . W.shift), viewScreen def 0])
-         , ("M-S-<Right>", sequence_[screenWorkspace 0 >>= flip whenJust (windows . W.shift), viewScreen def 1])
+         , ("M-S-<Right>", sequence_[screenWorkspace 1 >>= flip whenJust (windows . W.shift), viewScreen def 0])
+         , ("M-S-<Left>", sequence_[screenWorkspace 0 >>= flip whenJust (windows . W.shift), viewScreen def 1])
          , ("M-S-l", safeSpawn "xset" ["dpms", "force", "standby"])
         ] ++ [ (otherModMasks ++ "M-" ++ [key], action tag)
           | (tag, key)  <- zip myWorkspaces "123456789"
@@ -139,7 +140,7 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList
 main = do
     xmproc <- spawnPipe "$HOME/.xmonad/bar"
     -- xmproc <- spawnPipe "$HOME/.xmonad/oldbar/dzen.sh"
-    xmonad $ ewmh defaultConfig
+    xmonad $ ewmh . ewmhFullscreen . docks $ def
         { manageHook = manageDocks <+> myManageHooks
         , layoutHook = layout
         , logHook            = myLogHook xmproc
@@ -148,7 +149,7 @@ main = do
         , normalBorderColor = "#4B0000"
         , modMask = mod4Mask     -- Rebind Mod to the Windows key
         , focusFollowsMouse = False
-        , handleEventHook = mconcat[ docksEventHook, handleEventHook defaultConfig ] <+> fullscreenEventHook
+        , handleEventHook = handleEventHook def
         , mouseBindings = myMouseBindings
         }
         `additionalKeysP` myKeys
