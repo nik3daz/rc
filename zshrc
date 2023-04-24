@@ -314,15 +314,6 @@ startup() {
   goma_ctl ensure_start
 }
 
-textproto2gcl() {
-  local textprotopath = $1
-  local message = $2
-  local protodeps = $3
-  local outgcl = `echo $textprotopath | sed 's/\.proto$/.gcl/'`
-  echo $outgcl
-  /usr/bin/gcl fromascii $textprotopath --message $message --proto_path $PWD --proto $protodeps
-}
-
 alias hd='hg diff'
 alias hpd='hg pdiff'
 alias hdu='hg pdiff'
@@ -335,17 +326,7 @@ alias hx='hg xl'
 alias hchu='hg prev'
 alias hobs='hg obslog -p'
 alias hup='hg upload chain'
-alias hpub='hg fix && build_cleaner && hg upload chain'
+alias hpub='hg fix && build_cleaner && tricorder analyze -categories Lint,TSChecks -fix && hg upload chain'
 alias hupa='hg upload --all'
+alias hru='hg revert -r p4base '
 
-alias mountsshfs='sshfs calamity@freshprince.syd.corp.google.com:/usr/local/google/home/calamity/local/src remote_src'
-alias sshdesk='ssh freshprince.syd.corp.google.com'
-alias asperitas='ssh asperitas.c.googlers.com'
-alias sshcodeserver='ssh -L9000:localhost:8123 freshprince.syd.corp.google.com'
-
-hash -d g=/google/src/cloud/calamity
-hash -d yta=/google/src/cloud/calamity/yt-android/google3
-
-alias epg_server=/google/src/head/depot/google3/video/youtube/utils/elements/tools/playground/epg_server
-alias yt_crow=blaze-bin/video/youtube/android/tools/yt_crow/yt_crow
-alias plscrow='cd .;blaze build video/youtube/android/tools/yt_crow'
