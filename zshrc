@@ -55,6 +55,7 @@ plugins=(gitfast zsh-syntax-highlighting)
 # User configuration
 
 export PATH="$HOME/local/go/bin:$HOME/local/depot_tools:$HOME/depot_tools:$HOME/local/rc_scripts:$HOME/local/bin:$HOME/local/go/bin:$HOME/local/depot_tools:$HOME/depot_tools:$HOME/local/rc_scripts:$HOME/local/bin:/usr/lib/google-golang/bin:/usr/local/buildtools/java/jdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/local/src/third_party/android_tools/sdk/platform-tools:$HOME/node_modules/bin:$HOME/local/crosfleet"
+source /etc/bash_completion.d/g4d
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -349,6 +350,13 @@ harchive() {
   hg drop . --prune --skip-confirmation
 }
 
+renameall() {
+  for f in `ls | grep $1`; do
+    echo $f
+    mv $f `echo $f | sed "s/$1/$2/"`
+  done
+}
+
 alias hd='hg diff'
 alias hpd='hg pdiff'
 alias hdu='hg pdiff'
@@ -357,10 +365,12 @@ alias hc='hg amend'
 alias hb='hg commit'
 alias hch='hg update'
 alias hm='hg xl'
-alias hx='hg xl'
 alias hchu='hg prev'
 alias hobs='hg obslog -p'
 alias hup='hg upload chain'
 alias hupa='hg upload --all'
 alias hru='hg revert -r p4base '
-
+alias hst='hg status '
+local xlfmt='{label("log.branch", node|short)} {desc|firstline}'
+alias hx="hg xl -T '$xlfmt'"
+export PATH=$PATH:/google/bin/releases/youtube-fe-infra/tools
