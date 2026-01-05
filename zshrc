@@ -351,9 +351,20 @@ harchive() {
 }
 
 renameall() {
-  for f in `ls | grep $1`; do
-    echo $f
-    mv $f `echo $f | sed "s/$1/$2/"`
+  for f in `find -type f . | tac | grep $1`
+  do
+    local dst=`echo $f | sed "s/$1/$2/g"`
+    echo "$f => $dst"
+    mv $f $dst
+  done
+}
+
+hgrenameall () {
+  for f in `find -type f . | tac | grep $1`
+  do
+    local dst=`echo $f | sed "s/$1/$2/g"`
+    echo "$f => $dst"
+    hg mv $f $dst
   done
 }
 
