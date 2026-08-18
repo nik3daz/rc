@@ -55,6 +55,7 @@ plugins=(gitfast zsh-syntax-highlighting)
 # User configuration
 
 export PATH="$HOME/local/go/bin:$HOME/local/depot_tools:$HOME/depot_tools:$HOME/local/rc_scripts:$HOME/local/bin:$HOME/local/go/bin:$HOME/local/depot_tools:$HOME/depot_tools:$HOME/local/rc_scripts:$HOME/local/bin:/usr/lib/google-golang/bin:/usr/local/buildtools/java/jdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/local/src/third_party/android_tools/sdk/platform-tools:$HOME/node_modules/bin:$HOME/local/crosfleet"
+source /etc/bash_completion.d/g4d
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -316,15 +317,6 @@ startup() {
   goma_ctl ensure_start
 }
 
-textproto2gcl() {
-  local textprotopath=$1
-  local message=$2
-  local protodeps=$3
-  local outgcl=`echo $textprotopath | sed 's/\.proto$/.gcl/'`
-  echo $outgcl
-  /usr/bin/gcl fromascii $textprotopath --message $message --proto_path $PWD --proto $protodeps
-}
-
 hrbchildren() {
   local rebase_target=$1
   if [ -z $rebase_target ]; then
@@ -358,6 +350,23 @@ harchive() {
   hg drop . --prune --skip-confirmation
 }
 
+renameall() {
+  for f in `find -type f . | tac | grep $1`
+  do
+    local dst=`echo $f | sed "s/$1/$2/g"`
+    echo "$f => $dst"
+    mv $f $dst
+  done
+}
+
+hgrenameall () {
+  for f in `find -type f . | tac | grep $1`
+  do
+    local dst=`echo $f | sed "s/$1/$2/g"`
+    echo "$f => $dst"
+    hg mv $f $dst
+  done
+}
 
 alias hd='hg diff'
 alias hpd='hg pdiff'
@@ -367,10 +376,10 @@ alias hc='hg amend'
 alias hb='hg commit'
 alias hch='hg update'
 alias hm='hg xl'
-alias hx='hg xl'
 alias hchu='hg prev'
 alias hobs='hg obslog -p'
 alias hup='hg upload chain'
-alias hpub='hg fix && build_cleaner && hg upload chain'
 alias hupa='hg upload --all'
 alias xm='xmodmap ~/.xmodmap'
+local xlfmt='{label("log.branch", node|short)} {desc|firstline}'
+export PATH=$PATH:/google/bin/releases/youtube-fe-infra/tools

@@ -1,0 +1,5 @@
+[extensions]
+graphlog = 
+
+[pager]
+pager = less -FRX

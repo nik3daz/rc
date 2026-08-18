@@ -1,8 +1,8 @@
 RC := $(HOME)/.rc
 
-.PHONY: all profile vim gdbinit gitconfig zsh xmonad xmodmap
+.PHONY: all profile vim gdbinit gitconfig zsh xmonad xmodmap hgrc
 
-all: profile vim gdbinit gitconfig zsh xmonad xmodmap
+all: profile vim gdbinit gitconfig zsh xmonad xmodmap hgrc
 
 profile:
 	rm -f $(HOME)/.profile
@@ -21,6 +21,10 @@ gdbinit:
 gitconfig:
 	rm -f $(HOME)/.gitconfig
 	ln -s $(RC)/gitconfig $(HOME)/.gitconfig
+
+hgrc:
+	rm -f $(HOME)/.hgrc
+	ln -s $(RC)/hgrc $(HOME)/.hgrc
 
 subl:
 	rm -f $(HOME)/.config/sublime-text-3
