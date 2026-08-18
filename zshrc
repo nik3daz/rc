@@ -373,4 +373,4 @@ alias hobs='hg obslog -p'
 alias hup='hg upload chain'
 alias hpub='hg fix && build_cleaner && hg upload chain'
 alias hupa='hg upload --all'
-
+alias xm='xmodmap ~/.xmodmap'

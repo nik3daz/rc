@@ -117,8 +117,8 @@ myKeys = [ ("M-A", io (exitWith ExitSuccess))
          , ("M-<Down>", windows W.focusDown)
          , ("M-<Left>", viewScreen def 0)
          , ("M-<Right>", viewScreen def 1)
-         , ("M-S-<Right>", sequence_[screenWorkspace 1 >>= flip whenJust (windows . W.shift), viewScreen def 0])
-         , ("M-S-<Left>", sequence_[screenWorkspace 0 >>= flip whenJust (windows . W.shift), viewScreen def 1])
+         , ("M-S-<Right>", sequence_[screenWorkspace 0 >>= flip whenJust (windows . W.shift), viewScreen def 1])
+         , ("M-S-<Left>", sequence_[screenWorkspace 1 >>= flip whenJust (windows . W.shift), viewScreen def 0])
          , ("M-S-l", safeSpawn "xset" ["dpms", "force", "standby"])
         ] ++ [ (otherModMasks ++ "M-" ++ [key], action tag)
           | (tag, key)  <- zip myWorkspaces "123456789"
@@ -149,17 +149,18 @@ main = do
         , normalBorderColor = "#4B0000"
         , modMask = mod4Mask     -- Rebind Mod to the Windows key
         , focusFollowsMouse = False
+        , clickJustFocuses = False
         , handleEventHook = handleEventHook def
         , mouseBindings = myMouseBindings
         }
         `additionalKeysP` myKeys
         `additionalKeys`
-        [ ((controlMask .|. mod1Mask, xK_l), safeSpawn "xscreensaver-command" ["-lock"])
-        {- [ ((controlMask .|. mod1Mask, xK_l), spawn "xautolock -locknow") -}
+          [ ((controlMask .|. mod1Mask, xK_l), safeSpawn "xscreensaver-command" ["-lock"])
+{-          [ ((controlMask .|. mod1Mask, xK_l), spawn "xautolock -locknow") -}
         , ((mod4Mask, xK_f), fullFloatFocused)
         , ((mod4Mask, xK_g), floatFocused)
         , ((mod4Mask, xK_p), spawn "gmrun")
-        , ((0, xK_Print), spawn "/usr/bin/snipit --notify --copy --direct --noopen -p")
+        , ((0, xK_Print), spawn "/usr/bin/snipit --notify --copy --direct --noopen")
         ]
 
 myManageHooks = composeAll

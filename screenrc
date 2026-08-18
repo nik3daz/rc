@@ -362,5 +362,5 @@ defnonblock on
 # setenv DISPLAY ''
 
 hardstatus alwayslastline
-hardstatus string '%{wb}%H %{w}| %{Y}%l %{W}| %?%{w}%-w%?%{+b g}[%{W}%{r}%n%{W} %t%?{%u}%?%{-b g}]%{W}%?%+w%?%=%{G}| %{Y}%d-%m-%Y %c:%s '
+hardstatus string '%{wb}%t %{w}| %{Y}%l %{W}| %?%{w}%-w%?%{+b g}[%{W}%{r}%n%{W} %t%?{%u}%?%{-b g}]%{W}%?%+w%?%=%{G}| %{Y}%d-%m-%Y %c:%s '
 
