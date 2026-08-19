@@ -1,6 +1,0 @@
-#!/bin/bash
-
-cd "$(dirname "$0")"
-export PATH=$(dirname $0):$PATH
-bar
-#dzen | dzen2 -bg "#BEBEBE" -fg black -h 24 -ta l

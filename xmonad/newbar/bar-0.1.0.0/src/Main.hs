@@ -63,7 +63,7 @@ defaultTextColor :: String
 defaultTextColor = "#C7AE86"
 
 trayerCmd :: Int -> Int -> String
-trayerCmd = printf "trayer --expand false --edge top --align right\
+trayerCmd = printf "killall trayer; sleep 0.2; trayer --expand false --edge top --align right\
              \ --widthtype request --height %d --margin %d --monitor 1 --transparent true --alpha 0 --tint 0x2F1B40"
 
 bars :: [Bar]

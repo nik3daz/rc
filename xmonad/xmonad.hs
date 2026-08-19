@@ -128,7 +128,7 @@ myKeys = [ ("M-A", io (exitWith ExitSuccess))
          , ("M-S-l", safeSpawn "xset" ["dpms", "force", "standby"])
         ] ++ [ (otherModMasks ++ "M-" ++ [key], action tag)
           | (tag, key)  <- zip myWorkspaces "123456789"
-          , (otherModMasks, action) <- [("", windows . W.view)] -- was W.greedyView
+          , (otherModMasks, action) <- [("", windows . lazyView)] -- was W.greedyView
         ]
 
 myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList

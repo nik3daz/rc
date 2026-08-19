@@ -41,6 +41,8 @@ xmonad:
 	./install.sh
 	ln -s $(RC)/xmonad $(HOME)/.xmonad
 	ln -s $(RC)/xsession $(HOME)/.xsession
+	cd $(RC)/xmonad/newbar/bar-0.1.0.0
+	ghc --make -threaded src/Main.hs -O2 -funfolding-use-threshold=16 -optc-O3 -fexcess-precision -isrc -o dist-newstyle/build/x86_64-linux/ghc-8.8.4/bar-0.1.0.0/x/bar/build/bar/bar
 
 xmodmap:
 	rm -f $(HOME)/.xmodmap
