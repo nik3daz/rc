@@ -20,8 +20,9 @@ import System.Process
 import System.Environment
 import System.IO
 import Data.Monoid
-import Control.Monad (when)
+import Control.Monad (when, forM_)
 import Data.List (delete)
+import XMonad.Util.NamedWindows (getName)
 import Data.Maybe (fromMaybe)
 import Data.Monoid (All(All))
 import XMonad.Util.WindowProperties (getProp32)
@@ -49,29 +50,34 @@ myLogHook xmproc = do
     winset <- gets windowset
     urgents <- readUrgents
     sort' <- ppSort dzenPP
-    -- layout description
-    let ld = description . S.layout . S.workspace . S.current $ winset
-    -- workspace list
-    let ws = pprWindowSet sort' urgents dzenPP winset
-    -- window title
-    let winid = S.peek winset >>= return . show
-    iconData <- getIconData winid
+    let pp = dzenPP
+               { ppTitle = id
+               , ppLayout = \_ -> "  "
+               , ppVisible = dzenColor "#FFFFFF" "#9581A1" . pad
+               , ppCurrent = dzenColor "#FFFFFF" "#6674DE" . pad
+               , ppHidden = dzenColor "#9581A1" "" . pad
+               }
+    let ws = pprWindowSet sort' urgents pp winset
 
-    dynamicLogWithPP $ dzenPP
-                       { ppOutput = hPutStrLn xmproc
-                       , ppTitle = dzenColor "#9581A1" "" . myAddIcon iconData . shorten 150
-                       , ppLayout = \x -> "  "
-                       , ppVisible = dzenColor "#FFFFFF" "#9581A1" . pad
-                       , ppCurrent = dzenColor "#FFFFFF" "#6674DE" . pad
-                       , ppHidden = dzenColor "#9581A1" "" . pad
-                       }
+    forM_ (W.screens winset) $ \s -> do
+        let SD (Rectangle sx _ _ _) = W.screenDetail s
+        let screenIdx = if sx == 0 then 1 else 0 :: Int
+        let mbWin = fmap W.focus (W.stack (W.workspace s))
+        (iconData, title) <- case mbWin of
+            Nothing -> return ("", "")
+            Just w  -> do
+                t <- fmap show (getName w)
+                return (show w, t)
+        let formattedTitle = if null title
+                             then ""
+                             else dzenColor "#9581A1" "" (myAddIcon iconData (shorten 150 title))
+        let line = show screenIdx ++ ":" ++ ws ++ "  " ++ formattedTitle
+        io $ hPutStrLn xmproc line
+    io $ hFlush xmproc
 
 myAddIcon iconName s = case iconName of
   "" -> s
   otherwise -> "{" ++ iconName ++ "} " ++ s
-
-getIconData Nothing = return ""
-getIconData (Just winid) = return winid
 
 -- layout = smartBorders(avoidStruts(onWorkspace "8" im $ (grid1 ||| grid2 ||| grid3 ||| Full ||| tiled ||| Mirror tiled)))
 layout = minimize(boringWindows(smartBorders(avoidStruts(grid1 ||| grid2 ||| grid3 ||| {- fixedColumn ||| -} Full ||| layoutHints(grid1) ||| tiled ||| Mirror tiled))))
@@ -117,12 +123,12 @@ myKeys = [ ("M-A", io (exitWith ExitSuccess))
          , ("M-<Down>", windows W.focusDown)
          , ("M-<Left>", viewScreen def 0)
          , ("M-<Right>", viewScreen def 1)
-         , ("M-S-<Right>", sequence_[screenWorkspace 0 >>= flip whenJust (windows . W.shift), viewScreen def 1])
-         , ("M-S-<Left>", sequence_[screenWorkspace 1 >>= flip whenJust (windows . W.shift), viewScreen def 0])
+         , ("M-S-<Left>", sendToScreen horizontalScreenOrderer (P 0))
+         , ("M-S-<Right>", sendToScreen horizontalScreenOrderer (P 1))
          , ("M-S-l", safeSpawn "xset" ["dpms", "force", "standby"])
         ] ++ [ (otherModMasks ++ "M-" ++ [key], action tag)
           | (tag, key)  <- zip myWorkspaces "123456789"
-          , (otherModMasks, action) <- [("", windows . lazyView)] -- was W.greedyView
+          , (otherModMasks, action) <- [("", windows . W.view)] -- was W.greedyView
         ]
 
 myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList
@@ -144,7 +150,7 @@ main = do
         { manageHook = manageDocks <+> myManageHooks
         , layoutHook = layout
         , logHook            = myLogHook xmproc
-        , terminal = "xfce4-terminal"
+        , terminal = "gnome-terminal"
         , focusedBorderColor = "#FF0000"
         , normalBorderColor = "#4B0000"
         , modMask = mod4Mask     -- Rebind Mod to the Windows key

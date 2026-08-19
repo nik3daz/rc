@@ -3,7 +3,8 @@
 
 import Control.Concurrent
 import Control.Concurrent.Chan
-import Control.Monad.State (StateT, execStateT, runStateT, forever, liftIO, put)
+import Control.Monad (forever)
+import Control.Monad.State (StateT, execStateT, runStateT, liftIO, put)
 import Data.Bits
 import Data.List (find)
 import Data.Time
@@ -16,7 +17,6 @@ import Graphics.X11.Xrender
 import Numeric
 import System.Exit
 import Text.Printf (printf)
-import System.Locale
 import System.Process (runCommand, terminateProcess)
 import System.IO.Error
 

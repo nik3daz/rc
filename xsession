@@ -17,4 +17,6 @@ fi
 
 xmodmap $HOME/.xmodmap &
 
+xrandr --output DisplayPort-1 --auto --left-of DisplayPort-0 --output DisplayPort-0 --auto
+
 exec xmonad

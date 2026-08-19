@@ -1,0 +1,283 @@
+$ ghc --make xmonad.hs -i -ilib -fforce-recomp -main-is main -v0 -outputdir /usr/local/google/home/calamity/.xmonad/build-x86_64-linux -o /usr/local/google/home/calamity/.xmonad/xmonad-x86_64-linux
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/haskell-packages/ghc/lib/x86_64-linux-ghc-9.10.3-inplace/X11-1.10.3-CGFVEKJzPn39HHRSEOl7bE/libHSX11-1.10.3-CGFVEKJzPn39HHRSEOl7bE.a(Extras.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/haskell-packages/ghc/lib/x86_64-linux-ghc-9.10.3-inplace/X11-1.10.3-CGFVEKJzPn39HHRSEOl7bE/libHSX11-1.10.3-CGFVEKJzPn39HHRSEOl7bE.a(Extras.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/haskell-packages/ghc/lib/x86_64-linux-ghc-9.10.3-inplace/X11-1.10.3-CGFVEKJzPn39HHRSEOl7bE/libHSX11-1.10.3-CGFVEKJzPn39HHRSEOl7bE.a(fdset.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/haskell-packages/ghc/lib/x86_64-linux-ghc-9.10.3-inplace/X11-1.10.3-CGFVEKJzPn39HHRSEOl7bE/libHSX11-1.10.3-CGFVEKJzPn39HHRSEOl7bE.a(fdset.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/haskell-packages/ghc/lib/x86_64-linux-ghc-9.10.3-inplace/X11-1.10.3-CGFVEKJzPn39HHRSEOl7bE/libHSX11-1.10.3-CGFVEKJzPn39HHRSEOl7bE.a(auxiliaries.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/haskell-packages/ghc/lib/x86_64-linux-ghc-9.10.3-inplace/X11-1.10.3-CGFVEKJzPn39HHRSEOl7bE/libHSX11-1.10.3-CGFVEKJzPn39HHRSEOl7bE.a(auxiliaries.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/haskell-packages/ghc/lib/x86_64-linux-ghc-9.10.3-inplace/X11-1.10.3-CGFVEKJzPn39HHRSEOl7bE/libHSX11-1.10.3-CGFVEKJzPn39HHRSEOl7bE.a(XUtils.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/haskell-packages/ghc/lib/x86_64-linux-ghc-9.10.3-inplace/X11-1.10.3-CGFVEKJzPn39HHRSEOl7bE/libHSX11-1.10.3-CGFVEKJzPn39HHRSEOl7bE.a(XUtils.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/process-1.6.26.1-inplace/libHSprocess-1.6.26.1-inplace.a(runProcess.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/process-1.6.26.1-inplace/libHSprocess-1.6.26.1-inplace.a(runProcess.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/process-1.6.26.1-inplace/libHSprocess-1.6.26.1-inplace.a(fork_exec.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/process-1.6.26.1-inplace/libHSprocess-1.6.26.1-inplace.a(fork_exec.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/process-1.6.26.1-inplace/libHSprocess-1.6.26.1-inplace.a(posix_spawn.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/process-1.6.26.1-inplace/libHSprocess-1.6.26.1-inplace.a(posix_spawn.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/directory-1.3.8.5-inplace/libHSdirectory-1.3.8.5-inplace.a(C_utimensat.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/directory-1.3.8.5-inplace/libHSdirectory-1.3.8.5-inplace.a(C_utimensat.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(Signals.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(Signals.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(ByteString.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(ByteString.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(PosixPath.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(PosixPath.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(PosixString.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(PosixString.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(Env.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(Env.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(PosixString.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(PosixString.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(Internals.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(Internals.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(Common.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(Common.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(Common.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(Common.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(Common.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(Common.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(Common.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(Common.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(HsUnix.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(HsUnix.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(execvpe.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/unix-2.8.7.0-inplace/libHSunix-2.8.7.0-inplace.a(execvpe.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/time-1.12.2-inplace/libHStime-1.12.2-inplace.a(CTimespec.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/time-1.12.2-inplace/libHStime-1.12.2-inplace.a(CTimespec.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/bytestring-0.12.2.0-inplace/libHSbytestring-0.12.2.0-inplace.a(shortbytestring.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/bytestring-0.12.2.0-inplace/libHSbytestring-0.12.2.0-inplace.a(shortbytestring.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/bytestring-0.12.2.0-inplace/libHSbytestring-0.12.2.0-inplace.a(fpstring.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/bytestring-0.12.2.0-inplace/libHSbytestring-0.12.2.0-inplace.a(fpstring.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/bytestring-0.12.2.0-inplace/libHSbytestring-0.12.2.0-inplace.a(itoa.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/bytestring-0.12.2.0-inplace/libHSbytestring-0.12.2.0-inplace.a(itoa.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/bytestring-0.12.2.0-inplace/libHSbytestring-0.12.2.0-inplace.a(is-valid-utf8.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/bytestring-0.12.2.0-inplace/libHSbytestring-0.12.2.0-inplace.a(is-valid-utf8.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-internal-9.1003.0-inplace/libHSghc-internal-9.1003.0-inplace.a(PrelIOUtils.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-internal-9.1003.0-inplace/libHSghc-internal-9.1003.0-inplace.a(PrelIOUtils.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-internal-9.1003.0-inplace/libHSghc-internal-9.1003.0-inplace.a(primFloat.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-internal-9.1003.0-inplace/libHSghc-internal-9.1003.0-inplace.a(primFloat.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-internal-9.1003.0-inplace/libHSghc-internal-9.1003.0-inplace.a(Internals.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-internal-9.1003.0-inplace/libHSghc-internal-9.1003.0-inplace.a(Internals.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-internal-9.1003.0-inplace/libHSghc-internal-9.1003.0-inplace.a(SetEnv.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-internal-9.1003.0-inplace/libHSghc-internal-9.1003.0-inplace.a(SetEnv.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-internal-9.1003.0-inplace/libHSghc-internal-9.1003.0-inplace.a(iconv.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-internal-9.1003.0-inplace/libHSghc-internal-9.1003.0-inplace.a(iconv.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-internal-9.1003.0-inplace/libHSghc-internal-9.1003.0-inplace.a(inputReady.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-internal-9.1003.0-inplace/libHSghc-internal-9.1003.0-inplace.a(inputReady.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-internal-9.1003.0-inplace/libHSghc-internal-9.1003.0-inplace.a(md5.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-internal-9.1003.0-inplace/libHSghc-internal-9.1003.0-inplace.a(md5.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-internal-9.1003.0-inplace/libHSghc-internal-9.1003.0-inplace.a(strerror.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-internal-9.1003.0-inplace/libHSghc-internal-9.1003.0-inplace.a(strerror.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-bignum-1.3-inplace/libHSghc-bignum-1.3-inplace.a(gmp_wrappers.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-bignum-1.3-inplace/libHSghc-bignum-1.3-inplace.a(gmp_wrappers.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-prim-0.12.0-inplace/libHSghc-prim-0.12.0-inplace.a(atomic.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-prim-0.12.0-inplace/libHSghc-prim-0.12.0-inplace.a(atomic.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-prim-0.12.0-inplace/libHSghc-prim-0.12.0-inplace.a(bitrev.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-prim-0.12.0-inplace/libHSghc-prim-0.12.0-inplace.a(bitrev.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-prim-0.12.0-inplace/libHSghc-prim-0.12.0-inplace.a(popcnt.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-prim-0.12.0-inplace/libHSghc-prim-0.12.0-inplace.a(popcnt.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-prim-0.12.0-inplace/libHSghc-prim-0.12.0-inplace.a(word2float.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/ghc-prim-0.12.0-inplace/libHSghc-prim-0.12.0-inplace.a(word2float.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Arena.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Arena.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Capability.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Capability.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(CloneStack.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(CloneStack.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(FileLock.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(FileLock.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Globals.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Globals.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Hash.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Hash.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(HsFFI.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(HsFFI.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(IOManager.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(IOManager.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Libdw.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Libdw.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(LibdwPool.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(LibdwPool.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(IPE.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(IPE.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(RtsAPI.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(RtsAPI.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(RtsFlags.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(RtsFlags.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(RtsMain.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(RtsMain.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(RtsMessages.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(RtsMessages.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(RtsStartup.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(RtsStartup.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(RtsUtils.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(RtsUtils.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(STM.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(STM.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Schedule.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Schedule.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Sparks.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Sparks.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(StableName.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(StableName.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(StablePtr.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(StablePtr.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(StaticPtrTable.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(StaticPtrTable.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Stats.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Stats.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(StgCRun.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(StgCRun.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(StgPrimFloat.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(StgPrimFloat.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Task.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Task.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(ThreadPaused.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(ThreadPaused.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Threads.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Threads.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Timer.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Timer.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(TopHandler.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(TopHandler.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Trace.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Trace.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Weak.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Weak.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(EventLog.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(EventLog.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(EventLogWriter.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(EventLogWriter.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(FlagDefaults.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(FlagDefaults.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(LongGCSync.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(LongGCSync.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(MallocFail.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(MallocFail.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(OnExit.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(OnExit.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(OutOfHeap.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(OutOfHeap.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(StackOverflow.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(StackOverflow.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(BlockAlloc.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(BlockAlloc.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(GC.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(GC.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(GCAux.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(GCAux.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(GCUtils.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(GCUtils.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(MBlock.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(MBlock.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(MarkWeak.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(MarkWeak.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(NonMoving.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(NonMoving.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(NonMovingCensus.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(NonMovingCensus.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(NonMovingMark.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(NonMovingMark.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(NonMovingShortcut.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(NonMovingShortcut.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(NonMovingSweep.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(NonMovingSweep.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Scav.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Scav.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Storage.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Storage.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Sweep.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Sweep.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(fs.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(fs.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(NativeAmd64.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(NativeAmd64.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(GetTime.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(GetTime.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Ticker.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Ticker.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(OSMem.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(OSMem.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(OSThreads.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(OSThreads.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Select.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Select.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Signals.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Signals.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(TTY.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(TTY.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(AdjustorPool.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(AdjustorPool.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(ExecPage.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(ExecPage.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(CheckUnload.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(CheckUnload.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(ClosureSize.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(ClosureSize.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(ForeignExports.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(ForeignExports.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Heap.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Heap.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Hpc.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Hpc.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Inlines.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Inlines.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Interpreter.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Interpreter.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Linker.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Linker.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Messages.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Messages.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(PathUtils.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(PathUtils.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Printer.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Printer.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(ProfHeap.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(ProfHeap.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Proftimer.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Proftimer.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(RaiseAsync.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(RaiseAsync.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(RtsSymbolInfo.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(RtsSymbolInfo.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(RtsSymbols.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(RtsSymbols.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(ThreadLabels.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(ThreadLabels.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(WSDeque.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(WSDeque.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(ZeroSlop.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(ZeroSlop.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Elf.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Elf.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(InitFini.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(InitFini.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(LoadArchive.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(LoadArchive.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(LoadNativeObjPosix.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(LoadNativeObjPosix.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(M32Alloc.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(M32Alloc.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(MMap.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(MMap.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(ProddableBlocks.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(ProddableBlocks.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(SymbolExtras.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(SymbolExtras.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(elf_got.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(elf_got.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(CNF.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(CNF.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Compact.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Compact.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Evac.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Evac.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(NonMovingAllocate.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(NonMovingAllocate.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(NonMovingScav.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(NonMovingScav.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(GetEnv.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(GetEnv.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Continuation.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(Continuation.o)(.sframe); SFrame section ignored
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(ReportMemoryMap.o)(.sframe); unexpected SFrame format version 2
+/usr/bin/x86_64-linux-gnu-ld.bfd: error in /usr/lib/ghc/lib/../lib/x86_64-linux-ghc-9.10.3/rts-1.0.2/libHSrts-1.0.2.a(ReportMemoryMap.o)(.sframe); SFrame section ignored

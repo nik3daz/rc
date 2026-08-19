@@ -6,16 +6,15 @@ import Control.Concurrent
 import Control.DeepSeq
 import Control.Exception
 import Control.Monad
-import Control.Monad.Loops
 import Data.Bits
 import Data.IORef
 import Data.List
 import Data.Map ((!))
 import Data.Maybe
 import Data.Time
-import Data.Time.Zones
 import Data.Word
 import Foreign.Ptr
+import System.IO.Unsafe (unsafePerformIO)
 import GHC.Generics (Generic)
 import Graphics.X11.Xft
 import Graphics.X11.Xinerama
@@ -47,12 +46,12 @@ barHeight :: Int
 barHeight = 24
 
 defaultFont :: String
-defaultFont = "-*-*-medium-r-normal--15-*-*-*-*-*-iso10646-*"
+defaultFont = "-*-latin modern sans-*-*-*-*-17-*-*-*-*-*-*-*"
 
 largeFont = "-*-*-medium-r-normal--35-*-*-*-*-*-iso10646-*"
 
 barBackground :: String
-barBackground = "#BEBEBE"
+barBackground = "#2F1B40"
 
 infoBackground :: String
 infoBackground = "#181838"
@@ -65,11 +64,11 @@ defaultTextColor = "#C7AE86"
 
 trayerCmd :: Int -> Int -> String
 trayerCmd = printf "trayer --expand false --edge top --align right\
-             \ --widthtype request --height %d --margin %d"
+             \ --widthtype request --height %d --margin %d --monitor 1 --transparent true --alpha 0 --tint 0x2F1B40"
 
 bars :: [Bar]
---bars = [bar1, bar2]
-bars = [bar1]
+bars = [bar1, bar2]
+-- bars = [bar1]
 
 bar1 :: Bar
 bar1 = Bar barBackground barHeight (XineramaScreen 0) GravityTop [
@@ -87,13 +86,13 @@ bar1 = Bar barBackground barHeight (XineramaScreen 0) GravityTop [
         battery "BAT1",
         trayer,
 
-        title # LeftPadding 5 # RightPadding 2 #
+        title # LeftPadding 2 # RightPadding 2 #
                 BackgroundColor barBackground #
-                JustifyLeft # TextColor "#000000"
+                JustifyLeft # TextColor "#000000" # Width 5000
       ]
 
 bar2 :: Bar
-bar2 = Bar barBackground (barHeight*2) (XineramaScreen 0) GravityBottom [
+bar2 = Bar barBackground (barHeight) (XineramaScreen 1) GravityTop [
         clock # TimeFormat "%R" #RefreshRate 60 #
             Width 60 # RightPadding 4 #
             LocalTimeZone # BackgroundColor infoBackground #
@@ -348,12 +347,31 @@ localTimezone = do
     return $ ZonedTime localTime timezone
 
 otherTimezone :: String -> IO (UTCTime -> IO ZonedTime)
-otherTimezone timezone = do
-  tz <- loadSystemTZ timezone
-  return $ \utcTime -> do
-    let timeZone = timeZoneForUTCTime tz utcTime
-    let localTime = utcToLocalTime timeZone utcTime
-    return $ ZonedTime localTime timeZone
+otherTimezone "GMT" = return $ \utcTime -> return $ utcToZonedTime utc utcTime
+otherTimezone "UTC" = return $ \utcTime -> return $ utcToZonedTime utc utcTime
+otherTimezone _ = localTimezone
+
+iterateM_ :: Monad m => (a -> m a) -> a -> m b
+iterateM_ f a = f a >>= iterateM_ f
+
+titleSubscribers :: IORef [(Int, String -> IO ())]
+titleSubscribers = unsafePerformIO $ do
+  subs <- newIORef []
+  _ <- forkIO $ forever $ do
+    line <- getLine `catchIOError` \msg -> do
+      print msg
+      exitImmediately ExitSuccess
+      return ""
+    case span (/= ':') line of
+      (scrStr, ':':title) | [(scrIdx, "")] <- reads scrStr -> do
+        callbacks <- readIORef subs
+        forM_ callbacks $ \(idx, cb) ->
+          when (idx == scrIdx) $ cb title
+      _ -> do
+        callbacks <- readIORef subs
+        mapM_ (\(_, cb) -> cb line) callbacks
+  return subs
+{-# NOINLINE titleSubscribers #-}
 
 formatClock :: String -> (UTCTime -> IO ZonedTime) -> IO String
 formatClock fmt zoned = do
@@ -1043,29 +1061,22 @@ makeWidget rs _ wd@Clock { refreshRate = rate } = do
           return [message]
 
 makeWidget rs _ wd@Title {} = do
-  let RenderState { display = dpy, window = w} = rs
-  let terminate msg = do
-        print msg
-        --exitSuccess
-        exitImmediately ExitSuccess
-        return "a"
-
+  let RenderState { display = dpy, window = w, pos = (scX, _, _, _, _, _) } = rs
+  let screenIdx = if scX == 0 then 1 else 0 :: Int
   fn <- makeFont rs (tattr_ wd)
   icons <- makeIcons rs
   paint <- newIORef $ \_ -> return (icons, Nothing)
   dirty <- newIORef False
   sender <- makeSenderX w
-  runThread $ forever $ do
-     -- doesn't work with multiple titles on multiple bars
-     title <- getLine `catchIOError` terminate
-     writeIORef' paint $ \iconsA -> do
-         if title == ""
-            then unmapWindow dpy w
-            else mapWindow dpy w
-         withDraw rs (drawStrings rs wd fn iconsA [title])
-
-     writeIORef' dirty True
-     sendX sender
+  let onTitle title = do
+        writeIORef' paint $ \iconsA -> do
+            if title == ""
+               then unmapWindow dpy w
+               else mapWindow dpy w
+            withDraw rs (drawStrings rs wd fn iconsA [title])
+        writeIORef' dirty True
+        sendX sender
+  atomicModifyIORef' titleSubscribers (\subs -> ((screenIdx, onTitle) : subs, ()))
   return (makeUpdatingPainterWithArg paint dirty icons, Nothing)
 
 makeWidget rs bgGraphs wd@(Graph attr (GraphDef typ tscale refresh_type) colors rate) = do
