@@ -57,11 +57,14 @@ myLogHook xmproc = do
                , ppCurrent = dzenColor "#FFFFFF" "#6674DE" . pad
                , ppHidden = dzenColor "#9581A1" "" . pad
                }
-    let ws = pprWindowSet sort' urgents pp winset
-
     forM_ (W.screens winset) $ \s -> do
         let SD (Rectangle sx _ _ _) = W.screenDetail s
         let screenIdx = if sx == 0 then 1 else 0 :: Int
+        let winsetForScreen = winset
+                { W.current = s
+                , W.visible = [s' | s' <- W.screens winset, W.screen s' /= W.screen s]
+                }
+        let ws = pprWindowSet sort' urgents pp winsetForScreen
         let mbWin = fmap W.focus (W.stack (W.workspace s))
         (iconData, title) <- case mbWin of
             Nothing -> return ("", "")
